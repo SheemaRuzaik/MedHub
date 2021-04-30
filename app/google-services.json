@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930963137623",
+    "project_id": "medhub-ab7ee",
+    "storage_bucket": "medhub-ab7ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930963137623:android:22a1c8c10d59cd85bdef12",
+        "android_client_info": {
+          "package_name": "com.sliit.medhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930963137623-4k62jchq1850ofulvujsdd8681hr0o3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMaxieEBXNu8197RkvmyL_lH4MlVN3O8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930963137623-4k62jchq1850ofulvujsdd8681hr0o3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
