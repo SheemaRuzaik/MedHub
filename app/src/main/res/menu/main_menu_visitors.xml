@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/home_visitor"
+            android:title="Home"
+            android:icon="@drawable/home"/>
+
+        <item android:id="@+id/sign_up"
+            android:title="Sign Up"
+            android:icon="@drawable/login"/>
+
+        <item android:id="@+id/sign_in"
+            android:title="Sign In"
+            android:icon="@drawable/login"/>
+
+        <item android:id="@+id/partners"
+            android:title="Partners"
+            android:icon="@drawable/partners"/>
+
+        <item android:id="@+id/about_us"
+            android:title="About Us"
+            android:icon="@drawable/about_us"/>
+
+        <item android:id="@+id/terms_condition"
+            android:title="@string/terms_conditions"
+            android:icon="@drawable/text_snippet"/>
+
+        <item android:id="@+id/privacy"
+            android:title="Privacy Policy"
+            android:icon="@drawable/settings"/>
+
+        <item android:id="@+id/contact"
+            android:title="Contact"
+            android:icon="@drawable/phone_android"/>
+
+    </group>
+</menu>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Medhub</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="fname">First Name - Required</string>
+    <string name="lname">Last Name - Required</string>
+    <string name="hname">Hospital Name - Required</string>
+    <string name="nic">NIC - Required</string>
+    <string name="email">Email - Required</string>
+    <string name="contact_no">Phone Number - Required</string>
+    <string name="address">Address - Required</string>
+    <string name="verification">Registration Number - Required</string>
+    <string name="password">Password</string>
+    <string name="con_password">Confirm Password</string>
+    <string name="sign_up">  Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="verify">Verify</string>
+    <string name="personal_info">Personal Info</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+</resources>
