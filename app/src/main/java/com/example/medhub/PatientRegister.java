@@ -7,7 +7,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,8 +18,15 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -40,6 +49,9 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Toolbar toolbar;
+
+    FirebaseAuthException firebaseAuthException;
+    DatabaseReference dbref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +101,74 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
             public void onClick(View v) {
                 //Intent intent = new Intent(PatientRegister.this, PatientRegisterContact.class);
                 //startActivity(intent);
+            }
+        });
+
+        patient = new Patient();
+
+        sign_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(first_name.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"First name cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(last_name.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Last name cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(nic.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"NIC no cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(email.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(contact.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Contact No cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(datebtn.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"DOB cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(pwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(cpwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Confirm Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }else {
+                    if (patient.isNICValid(nic.getText().toString().trim())){
+                        if (pwd.getText().toString().trim().equals(cpwd.getText().toString().trim())){
+
+                            dbref = FirebaseDatabase.getInstance().getReference().child("Patient");
+
+                            patient.setFirst_name(first_name.getText().toString().trim());
+                            patient.setLast_name(last_name.getText().toString().trim());
+                            patient.setEmail(email.getText().toString().trim());
+                            patient.setNic(nic.getText().toString().trim());
+                            patient.setDob(datebtn.getText().toString().trim());
+                            patient.setGender(spinner.toString().trim());
+                            patient.setContact(Integer.parseInt(contact.getText().toString().trim()));
+                            patient.setPasscword(pwd.getText().toString().trim());
+
+                            dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot snapshot) {
+                                    if(snapshot.hasChild(patient.getNic())){
+                                        Toast.makeText(getApplicationContext(),"NIC already exists",Toast.LENGTH_SHORT).show();
+                                    }else if(snapshot.hasChild(patient.getEmail())){
+                                        Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
+                                    }else if(snapshot.hasChild(patient.getContact().toString())){
+                                        Toast.makeText(getApplicationContext(),"Contact No already exists",Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        dbref.child(patient.getEmail()).setValue(patient);
+                                        Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(),PatientProfile.class);
+                                        startActivity(intent);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError error) {
+
+                                }
+                            });
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Confirm Password is not match", Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Invalid NIC number Format", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 

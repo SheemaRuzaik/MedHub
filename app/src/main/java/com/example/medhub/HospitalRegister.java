@@ -6,13 +6,22 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HospitalRegister extends AppCompatActivity {
 
@@ -28,6 +37,9 @@ public class HospitalRegister extends AppCompatActivity {
     private Toolbar toolbar;
     //Button
     TextView back, sign_up;
+
+    FirebaseAuthException firebaseAuthException;
+    DatabaseReference dbref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +76,67 @@ public class HospitalRegister extends AppCompatActivity {
             public void onClick(View v) {
                 //Intent intent = new Intent(HospitalRegister.this, HospitalRegisterContact.class);
                 //startActivity(intent);
+            }
+        });
+
+        hospital = new Hospital();
+
+        sign_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(name.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Hospital name cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(email.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(register.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Registration No cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(address.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Address cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(phone.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Phone No cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(pwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(cpwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Confirm Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }else {
+                    if (pwd.getText().toString().trim().equals(cpwd.getText().toString().trim())){
+
+                        dbref = FirebaseDatabase.getInstance().getReference().child("Hospital");
+
+                        hospital.setName(name.getText().toString().trim());
+                        hospital.setAddress(address.getText().toString().trim());
+                        hospital.setEmail(email.getText().toString().trim());
+                        hospital.setRegister_no(register.getText().toString().trim());
+                        hospital.setPhone(Integer.parseInt(phone.getText().toString().trim()));
+                        hospital.setPassword(pwd.getText().toString().trim());
+
+                        dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if(snapshot.hasChild(hospital.getEmail())){
+                                    Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
+                                }else if(snapshot.hasChild(hospital.getRegister_no())){
+                                    Toast.makeText(getApplicationContext(),"Register No already exists",Toast.LENGTH_SHORT).show();
+                                }else{
+                                    dbref.child(hospital.getEmail()).setValue(hospital);
+                                    Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(HospitalRegister.this, HospitalProfile.class);
+                                    startActivity(intent);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled( DatabaseError error) {
+
+                            }
+
+                        });
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Confirm Password is not match", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
             }
         });
 
