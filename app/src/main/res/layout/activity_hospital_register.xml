@@ -39,8 +39,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/form_bg"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginBottom="100dp"
             android:orientation="horizontal"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp">
@@ -77,6 +78,7 @@
                     android:background="@drawable/input_bg"
                     android:drawableLeft="@drawable/email"
                     android:drawablePadding="10dp"
+                    android:inputType="textEmailAddress"
                     android:hint="@string/email"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
@@ -145,6 +147,7 @@
                     android:drawablePadding="10dp"
                     android:background="@drawable/input_bg"
                     android:hint="@string/contact_no"
+                    android:inputType="phone"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
 
@@ -160,6 +163,7 @@
                     android:drawablePadding="10dp"
                     android:background="@drawable/input_bg"
                     android:hint="@string/password"
+                    android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
 
@@ -169,7 +173,8 @@
                     android:textSize="14dp"
                     android:text="must enter 6 characters"
                     android:textColor="@color/attention"
-                    android:layout_marginLeft="20dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
 
 
                 <EditText
@@ -182,6 +187,7 @@
                     android:drawableLeft="@drawable/lock"
                     android:drawablePadding="10dp"
                     android:background="@drawable/input_bg"
+                    android:inputType="textPassword"
                     android:hint="@string/con_password"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />

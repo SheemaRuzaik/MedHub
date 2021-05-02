@@ -115,8 +115,6 @@ public class HospitalRegister extends AppCompatActivity {
                             public void onDataChange(DataSnapshot snapshot) {
                                 if(snapshot.hasChild(hospital.getEmail())){
                                     Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
-                                }else if(snapshot.hasChild(hospital.getRegister_no())){
-                                    Toast.makeText(getApplicationContext(),"Register No already exists",Toast.LENGTH_SHORT).show();
                                 }else{
                                     dbref.child(hospital.getEmail()).setValue(hospital);
                                     Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();

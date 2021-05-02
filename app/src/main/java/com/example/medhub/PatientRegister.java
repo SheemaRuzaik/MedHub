@@ -39,7 +39,7 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
     // Form details
     EditText first_name, last_name, nic, pwd, cpwd, email, contact;
     private DatePickerDialog datePickerDialog;
-    private Button datebtn;
+    //private Button datebtn;
     Spinner spinner;
     // login link
     TextView sign_in;
@@ -68,13 +68,13 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
         nic = findViewById(R.id.Nic);
         pwd = findViewById(R.id.Patient_Pwd);
         cpwd = findViewById(R.id.Patient_Cpwd);
-        datebtn = findViewById(R.id.Date);
+        //datebtn = findViewById(R.id.Date);
 
         //Intent intent = getIntent();
         email = findViewById(R.id.Patient_Email);
         contact = findViewById(R.id.Patient_Contact);
 
-        datebtn.setText(getTodaysDate());
+        //datebtn.setText(getTodaysDate());
 
         spinner = findViewById(R.id.Gender);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -119,9 +119,7 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
                     Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
                 } else if(TextUtils.isEmpty(contact.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Contact No cannot be empty",Toast.LENGTH_SHORT).show();
-                } else if(TextUtils.isEmpty(datebtn.getText().toString())){
-                    Toast.makeText(getApplicationContext(),"DOB cannot be empty",Toast.LENGTH_SHORT).show();
-                }else if(TextUtils.isEmpty(pwd.getText().toString())){
+                } else if(TextUtils.isEmpty(pwd.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(cpwd.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Confirm Password cannot be empty",Toast.LENGTH_SHORT).show();
@@ -135,24 +133,19 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
                             patient.setLast_name(last_name.getText().toString().trim());
                             patient.setEmail(email.getText().toString().trim());
                             patient.setNic(nic.getText().toString().trim());
-                            patient.setDob(datebtn.getText().toString().trim());
                             patient.setGender(spinner.toString().trim());
                             patient.setContact(Integer.parseInt(contact.getText().toString().trim()));
-                            patient.setPasscword(pwd.getText().toString().trim());
+                            patient.setPassword(pwd.getText().toString().trim());
 
                             dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot snapshot) {
-                                    if(snapshot.hasChild(patient.getNic())){
-                                        Toast.makeText(getApplicationContext(),"NIC already exists",Toast.LENGTH_SHORT).show();
-                                    }else if(snapshot.hasChild(patient.getEmail())){
+                                    if(snapshot.hasChild(patient.getEmail())){
                                         Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
-                                    }else if(snapshot.hasChild(patient.getContact().toString())){
-                                        Toast.makeText(getApplicationContext(),"Contact No already exists",Toast.LENGTH_SHORT).show();
                                     }else{
                                         dbref.child(patient.getEmail()).setValue(patient);
                                         Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(),PatientProfile.class);
+                                        Intent intent = new Intent(getApplicationContext(),PatientRegister.class);
                                         startActivity(intent);
                                     }
                                 }
@@ -184,72 +177,6 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
 
     }
 
-    private String getTodaysDate() {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(calendar.YEAR);
-        int month = calendar.get(calendar.MONTH);
-        month = month + 1;
-        int dayOfMonth = calendar.get(calendar.DAY_OF_MONTH);
-
-        return makeDateString(dayOfMonth, month, year);
-    }
-
-    private void datepicker(){
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                month = month + 1;
-                String date = makeDateString(dayOfMonth, month, year);
-                datebtn.setText(date);
-            }
-        };
-
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(calendar.YEAR);
-        int month = calendar.get(calendar.MONTH);
-        int dayOfMonth = calendar.get(calendar.DAY_OF_MONTH);
-
-        int style = AlertDialog.THEME_HOLO_LIGHT;
-
-        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, dayOfMonth);
-        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
-    }
-
-    private String makeDateString(int day, int month, int year){
-        return  day  + "-" + getMonth(month) + "-" + year;
-    }
-
-    private String getMonth(int month) {
-        if (month == 1)
-            return "Jan";
-        if (month == 2)
-            return "Feb";
-        if (month == 3)
-            return "Mar";
-        if (month == 4)
-            return "Apr";
-        if (month == 5)
-            return "May";
-        if (month == 6)
-            return "Jun";
-        if (month == 7)
-            return "Jul";
-        if (month == 8)
-            return "Aug";
-        if (month == 9)
-            return "Sep";
-        if (month == 10)
-            return "Oct";
-        if (month == 11)
-            return "Nov";
-        if (month == 12)
-            return "Dec";
-        return "Jan";
-    }
-
-    public void datepicker(View view) {
-        datePickerDialog.show();
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

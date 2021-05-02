@@ -40,7 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="70dp"
+            android:background="@drawable/form_bg"
+            android:layout_marginBottom="100dp"
             android:orientation="horizontal"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp">
@@ -108,6 +109,7 @@
                     android:drawableLeft="@drawable/email"
                     android:drawablePadding="10dp"
                     android:hint="@string/email"
+                    android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
 
@@ -127,57 +129,31 @@
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="310dp"
-                android:layout_marginRight="0dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/Date"
-                    style="?android:spinnerStyle"
-                    android:layout_width="145dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:onClick="datepicker"
-                    android:paddingLeft="5dp"
-                    android:text="01-Jan-2021"
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
                 <Spinner
                     android:id="@+id/Gender"
-                    android:layout_width="130dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:gravity="center"
+                    android:layout_marginTop="15dp"
                     android:paddingLeft="5dp"
+                    android:background="@drawable/input_bg"
                     android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="370dp"
-                android:orientation="vertical"
-                android:paddingLeft="10dp">
 
 
                 <EditText
                     android:id="@+id/Patient_Pwd"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/input_bg"
                     android:drawableLeft="@drawable/lock"
                     android:drawablePadding="10dp"
                     android:hint="@string/password"
+                    android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />
 
@@ -185,7 +161,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:textSize="14dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:text="must enter 6 characters"
                     android:textColor="@color/black" />
 
@@ -193,12 +170,13 @@
                     android:id="@+id/Patient_Cpwd"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/input_bg"
                     android:drawableLeft="@drawable/lock"
                     android:drawablePadding="10dp"
+                    android:inputType="textPassword"
                     android:hint="@string/con_password"
                     android:paddingLeft="10dp"
                     android:textSize="16dp" />

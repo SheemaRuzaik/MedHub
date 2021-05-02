@@ -6,8 +6,8 @@ public class Patient {
     private String last_name;
     private String nic;
     private String gender;
-    private String dob;
-    private String passcword;
+    //private String dob;
+    private String password;
     private Integer contact;
 
     public Patient() {
@@ -53,20 +53,12 @@ public class Patient {
         this.gender = gender;
     }
 
-    public String getDob() {
-        return dob;
+    public String getPassword() {
+        return password;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
-    public String getPasscword() {
-        return passcword;
-    }
-
-    public void setPasscword(String passcword) {
-        this.passcword = passcword;
+    public void setPassword(String passcword) {
+        this.password = passcword;
     }
 
     public Integer getContact() {
