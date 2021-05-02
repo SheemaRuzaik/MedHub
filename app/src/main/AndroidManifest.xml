@@ -9,17 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Medhub">
-        <activity android:name=".PatientUpdatePassword"></activity>
+        <activity android:name=".HospitalLogin"></activity>
+        <activity android:name=".PatientLogin" />
+        <activity android:name=".PatientUpdatePassword" />
         <activity android:name=".HospitalUpdatePassword" />
         <activity android:name=".PatientEditProfile" />
         <activity android:name=".HospitalEditProfile" />
-        <activity android:name=".HospitalProfile">
-        </activity>
-        <activity android:name=".PatientProfile">
-        </activity>
-        <activity android:name=".HospitalRegister">
-
-        </activity>
+        <activity android:name=".HospitalProfile" />
+        <activity android:name=".PatientProfile" />
+        <activity android:name=".HospitalRegister" />
         <activity android:name=".PatientRegister">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

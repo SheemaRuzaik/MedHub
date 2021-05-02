@@ -32,9 +32,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="690dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/form_bg"
         android:layout_marginTop="70dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp">
 
@@ -42,20 +43,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="20dp"
             android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Profile"
-                android:gravity="center"
-                android:layout_marginTop="-0dp"
-                android:textSize="24dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

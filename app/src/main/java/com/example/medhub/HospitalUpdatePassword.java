@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
 
 public class HospitalUpdatePassword extends AppCompatActivity {
 
@@ -28,6 +29,8 @@ public class HospitalUpdatePassword extends AppCompatActivity {
     private Toolbar toolbar;
     // Button
     TextView update;
+
+    DatabaseReference upref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,8 @@ public class HospitalUpdatePassword extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 Intent intent = new Intent(HospitalUpdatePassword.this, HospitalProfile.class);
                 startActivity(intent);
             }

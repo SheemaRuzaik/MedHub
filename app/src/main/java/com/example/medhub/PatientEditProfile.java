@@ -8,17 +8,25 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class PatientEditProfile extends AppCompatActivity {
 
     // Title bar
     TextView title;
     // Form details
-    TextView first_name, last_name, nic, email, contact, dob, gender;
+    EditText first_name, last_name, email, contact;
+    TextView nic, gender;
     // navigation button
     ImageView home, profile, appointment, my_book, logout;
     // navigation details
@@ -27,6 +35,8 @@ public class PatientEditProfile extends AppCompatActivity {
     private Toolbar toolbar;
     // Button
     TextView save;
+
+    DatabaseReference dbref, upref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +53,47 @@ public class PatientEditProfile extends AppCompatActivity {
         nic = findViewById(R.id.edit_nic);
         email = findViewById(R.id.edit_patient_email);
         contact = findViewById(R.id.edit_patient_contact_no);
-        dob = findViewById(R.id.edit_dob);
+        //dob = findViewById(R.id.edit_dob);
         gender = findViewById(R.id.edit_gender);
 
         // button
         save = findViewById(R.id.edit_to_profile);
 
+        final SessionManagement sessionManagement=new SessionManagement(PatientEditProfile.this);
+        String un=sessionManagement.getSession();
+
+        dbref= FirebaseDatabase.getInstance().getReference().child("Patient").child(un);
+
+        dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                first_name.setText(snapshot.child("first_name").getValue().toString());
+                last_name.setText(snapshot.child("last_name").getValue().toString());
+                email.setText(snapshot.child("email").getValue().toString());
+                nic.setText(snapshot.child("nic").getValue().toString());
+                gender.setText(snapshot.child("gender").getValue().toString());
+                contact.setText(snapshot.child("contact").getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                upref= FirebaseDatabase.getInstance().getReference().child("Patient").child(nic.getText().toString());
+                upref.child("first_name").setValue(first_name.getText().toString().trim());
+                upref.child("last_name").setValue(last_name.getText().toString().trim());
+                upref.child("email").setValue(email.getText().toString().trim());
+                upref.child("nic").setValue(nic.getText().toString().trim());
+                upref.child("gender").setValue(gender.getText().toString().trim());
+                upref.child("contact").setValue(contact.getText().toString().trim());
+
+                Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(PatientEditProfile.this, PatientProfile.class);
                 startActivity(intent);
             }

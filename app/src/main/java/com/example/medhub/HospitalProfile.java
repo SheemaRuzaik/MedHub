@@ -12,8 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HospitalProfile extends AppCompatActivity {
 
@@ -27,6 +33,8 @@ public class HospitalProfile extends AppCompatActivity {
     private Toolbar toolbar;
     // Button
     TextView edit, change, delete;
+
+    DatabaseReference dbref,delref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,27 @@ public class HospitalProfile extends AppCompatActivity {
         change = findViewById(R.id.change_hospital);
         delete = findViewById(R.id.delete_hospital);
 
+        final SessionManagement sessionManagement=new SessionManagement(HospitalProfile.this);
+        String un=sessionManagement.getHospitalSession();
+
+        dbref= FirebaseDatabase.getInstance().getReference().child("Hospital").child(un);
+
+        dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                name.setText(snapshot.child("name").getValue().toString());
+                email.setText(snapshot.child("email").getValue().toString());
+                address.setText(snapshot.child("address").getValue().toString());
+                register.setText(snapshot.child("register_no").getValue().toString());
+                phone.setText(snapshot.child("phone").getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +89,21 @@ public class HospitalProfile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delref=FirebaseDatabase.getInstance().getReference().child("Hospital").child(register.getText().toString());
+                delref.removeValue();
+                sessionManagement.removeSession();
+
+                Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // navigation implement
         drawerLayout = findViewById(R.id.drawer_hp);
         navigationView = findViewById(R.id.Navigation_view_hp);

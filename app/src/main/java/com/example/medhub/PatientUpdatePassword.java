@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
 
 public class PatientUpdatePassword extends AppCompatActivity {
 
@@ -29,6 +30,8 @@ public class PatientUpdatePassword extends AppCompatActivity {
     private Toolbar toolbar;
     // Button
     TextView update;
+
+    DatabaseReference upref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

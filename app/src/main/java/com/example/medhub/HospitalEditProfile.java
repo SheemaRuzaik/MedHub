@@ -10,15 +10,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HospitalEditProfile extends AppCompatActivity {
 
     // Form details
-    TextView name, email, address, register, phone;
+    EditText name, email, address, phone;
+    TextView register;
     // navigation button
     ImageView home, doctor, profile, appointment, extra, logout;
     // navigation details
@@ -27,6 +35,8 @@ public class HospitalEditProfile extends AppCompatActivity {
     private Toolbar toolbar;
     // Button
     TextView save;
+
+    DatabaseReference dbref, upref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +53,40 @@ public class HospitalEditProfile extends AppCompatActivity {
         // Button
         save = findViewById(R.id.edit_to_profile_hospital);
 
+        final SessionManagement sessionManagement=new SessionManagement(HospitalEditProfile.this);
+        String un=sessionManagement.getHospitalSession();
+
+        dbref= FirebaseDatabase.getInstance().getReference().child("Hospital").child(un);
+
+        dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                name.setText(snapshot.child("name").getValue().toString());
+                email.setText(snapshot.child("email").getValue().toString());
+                register.setText(snapshot.child("register_no").getValue().toString());
+                address.setText(snapshot.child("address").getValue().toString());
+                phone.setText(snapshot.child("phone").getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                upref= FirebaseDatabase.getInstance().getReference().child("Hospital").child(register.getText().toString());
+                upref.child("name").setValue(name.getText().toString().trim());
+                upref.child("email").setValue(email.getText().toString().trim());
+                upref.child("register_no").setValue(register.getText().toString().trim());
+                upref.child("address").setValue(address.getText().toString().trim());
+                upref.child("phone").setValue(phone.getText().toString().trim());
+
+                Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(HospitalEditProfile.this, HospitalProfile.class);
                 startActivity(intent);
             }
