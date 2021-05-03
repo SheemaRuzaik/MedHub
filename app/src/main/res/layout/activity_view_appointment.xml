@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Viewfour"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroun"
+    android:orientation="vertical"
+    tools:context=".ViewAppointment">
+
+
+    <include
+        layout="@layout/app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="327dp" />
+
+
+    <TextView
+        android:id="@+id/view_appointment"
+        android:layout_width="297dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginBottom="576dp"
+        android:gravity="center"
+        android:text="My Appointments"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TableLayout
+        android:layout_width="359dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="203dp"
+        android:layout_marginBottom="395dp"
+        android:stretchColumns="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+
+            <TextView
+                android:background="#41D2E4"
+                android:padding="3dip"
+                android:text="Appointment No:"
+                android:textColor="#A9151111" />
+
+            <TextView
+                android:background="#DF8484"
+                android:gravity="center"
+                android:padding="3dip"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="#93C9E6"
+                android:backgroundTint="#90D3F8"
+                android:padding="3dip"
+                android:text="Patient Name:"
+                android:textColor="#A9151111" />
+
+            <TextView
+                android:background="#FAC7C7"
+                android:gravity="center"
+                android:padding="3dip"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:background="#41D2E4"
+                android:padding="3dip"
+                android:text="Consultant(Hospital):"
+                android:textColor="#A9151111" />
+
+            <TextView
+                android:background="#DF8484"
+                android:gravity="center"
+                android:padding="3dip"
+                android:textColor="#000000" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="#93C9E6"
+                android:padding="3dip"
+                android:text="Date:"
+                android:textColor="#A9151111" />
+
+            <TextView
+                android:background="#FAC7C7"
+                android:gravity="center"
+                android:padding="3dip"
+                android:textColor="#000000" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:background="#41D2E4"
+                android:padding="3dip"
+                android:text="Time:"
+                android:textColor="#A9151111" />
+
+            <TextView
+                android:background="#DF8484"
+                android:gravity="center"
+                android:padding="3dip"
+                android:textColor="#000000" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="297dp"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="171dp"
+        android:backgroundTint="#E63131"
+        android:text="EDIT"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="599dp"
+        android:layout_marginBottom="11dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/back"
+        android:textColor="#D84747"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="684dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/input_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/pat_prof_to_home"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_outline_home_24" />
+
+        <ImageView
+            android:id="@+id/pat_prof"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <ImageView
+            android:id="@+id/pat_prof_to_appointment"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/make_appointment" />
+
+        <ImageView
+            android:id="@+id/pat_prof_to_my_book"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_event_available_24" />
+
+        <ImageView
+            android:id="@+id/pat_prof_to_logout"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_outline_login_24" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

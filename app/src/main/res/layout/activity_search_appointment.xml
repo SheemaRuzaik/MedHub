@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewthree"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroun"
+    android:orientation="vertical"
+    tools:context=".SearchAppointment">
+
+
+    <include
+        layout="@layout/app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="327dp" />
+
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="141dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="563dp"
+        android:layout_marginBottom="106dp"
+        android:backgroundTint="#E63131"
+        android:text="@string/search"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="195dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="297dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="398dp"
+        android:gravity="center_vertical"
+        android:text="Hospital Name:"
+        android:textColor="#BA1C1818"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="251dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:backgroundTint="#ACD6FF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="333dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:backgroundTint="#ACD6FF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="503dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:backgroundTint="#ACD6FF"
+        android:spinnerMode="dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="420dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:backgroundTint="#ACD6FF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="195dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="215dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="480dp"
+        android:gravity="center_vertical"
+        android:text="Consultant Name:"
+        android:textColor="#BA1C1818"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="195dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="139dp"
+        android:gravity="center_vertical"
+        android:text="Specialization:"
+        android:textColor="#BA1C1818"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="195dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="467dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="75dp"
+        android:gravity="center_vertical"
+        android:text="Date:"
+        android:textColor="#BA1C1818"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="290dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginBottom="576dp"
+        android:gravity="center"
+        android:text="CHANNEL MY DOCTOR"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/input_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/pat_prof_to_home"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_outline_home_24" />
+
+        <ImageView
+            android:id="@+id/pat_prof"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <ImageView
+            android:id="@+id/pat_prof_to_appointment"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/make_appointment" />
+
+        <ImageView
+            android:id="@+id/pat_prof_to_my_book"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_event_available_24" />
+
+        <ImageView
+            android:id="@+id/pat_prof_to_logout"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_outline_login_24" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
