@@ -28,9 +28,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
-public class PatientRegister extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class PatientRegister extends AppCompatActivity {
 
     // Title bar
     TextView title;
@@ -77,11 +79,32 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
         //datebtn.setText(getTodaysDate());
 
         spinner = findViewById(R.id.Gender);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.gender, android.R.layout.simple_spinner_item);
+
+        List<String> gender = new ArrayList();
+        gender.add(0,"Choose Gender");
+        gender.add("Male");
+        gender.add("Female");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, gender);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Choose Gender")){
+                    // nothing
+                }else{
+                    String item = parent.getItemAtPosition(position).toString();
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         // login link
         sign_in = findViewById(R.id.Patient_register_to_sign_in);
@@ -89,7 +112,8 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(PatientRegister.this, PatientLogin.class);
+                startActivity(intent);
             }
         });
         // Button
@@ -133,19 +157,19 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
                             patient.setLast_name(last_name.getText().toString().trim());
                             patient.setEmail(email.getText().toString().trim());
                             patient.setNic(nic.getText().toString().trim());
-                            patient.setGender(spinner.toString().trim());
+                            patient.setGender(spinner.getSelectedItem().toString().trim());
                             patient.setContact(Integer.parseInt(contact.getText().toString().trim()));
                             patient.setPassword(pwd.getText().toString().trim());
 
                             dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot snapshot) {
-                                    if(snapshot.hasChild(patient.getEmail())){
+                                    if(snapshot.hasChild(patient.getNic())){
                                         Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
                                     }else{
-                                        dbref.child(patient.getEmail()).setValue(patient);
+                                        dbref.child(patient.getNic()).setValue(patient);
                                         Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(),PatientRegister.class);
+                                        Intent intent = new Intent(getApplicationContext(),PatientLogin.class);
                                         startActivity(intent);
                                     }
                                 }
@@ -176,15 +200,5 @@ public class PatientRegister extends AppCompatActivity implements AdapterView.On
         actionBar.setHomeAsUpIndicator(R.drawable.menu);
 
     }
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+    
 }

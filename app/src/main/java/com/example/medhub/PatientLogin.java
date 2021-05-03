@@ -26,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PatientLogin extends AppCompatActivity {
 
+    // Title bar
+    TextView title;
     // Patient object
     Patient patient;
     // Form details
@@ -46,6 +48,10 @@ public class PatientLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_login);
 
+        // Tool bar
+        title = findViewById(R.id.head);
+        title.setText("Patient Login");
+
         // form details
         nic = findViewById(R.id.login_nic);
         pwd = findViewById(R.id.login_pwd);
@@ -61,6 +67,8 @@ public class PatientLogin extends AppCompatActivity {
             }
         });
 
+        patient = new Patient();
+
         // Login
         sign_in = findViewById(R.id.patient_login_to_profile);
 
@@ -72,32 +80,21 @@ public class PatientLogin extends AppCompatActivity {
                 } else if(TextUtils.isEmpty(pwd.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
                 } else {
-                    final String un=nic.getText().toString().trim();
-                    final String pw=pwd.getText().toString().trim();
+                    String un=nic.getText().toString().trim();
+                    String pw=pwd.getText().toString().trim();
                     patient.setNic(nic.getText().toString().trim());
 
                     dbref= FirebaseDatabase.getInstance().getReference().child("Patient");
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot snapshot) {
-                            if((snapshot.hasChild(un))&&(snapshot.child(un).child("pwd").getValue().toString().equals(pw))){
-
-                                // Toast.makeText(getApplicationContext(),un,Toast.LENGTH_SHORT).show();
+                            if((snapshot.hasChild(un))&&(snapshot.child(un).child("password").getValue().toString().equals(pw))){
                                 SessionManagement sessionManagement=new SessionManagement(PatientLogin.this);
                                 sessionManagement.saveSession(patient);
+                                Toast.makeText(getApplicationContext(),"Login Successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), PatientProfile.class);
                                 startActivity(intent);
                             }else{
-                                AlertDialog.Builder alertDialog=new AlertDialog.Builder(getApplicationContext());
-                                alertDialog.setMessage("Invalid NIC or Password").setNeutralButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        finish();
-                                    }
-                                });
-                                //   AlertDialog dialog=alertDialog.create();
-                                // dialog.show();
-
                                 Toast.makeText(getApplicationContext(),"Invalid NIC or Password",Toast.LENGTH_SHORT).show();
                             }
                         }

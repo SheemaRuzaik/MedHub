@@ -19,14 +19,14 @@ public class SessionManagement {
 
     public void saveSession(Patient patient){
 
-        String un=patient.getEmail();
+        String un=patient.getNic();
         editor.putString(SESSION_KEY,un).commit();
 
     }
 
     public void saveHospitalSession(Hospital hospital){
 
-        String un=hospital.getEmail();
+        String un=hospital.getRegister_no();
         editor.putString(SESSION_KEY,un).commit();
     }
 

@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HospitalProfile extends AppCompatActivity {
 
+    // Title bar
+    TextView title;
     // Form details
     TextView name, email, address, register, phone;
     // navigation button
@@ -40,6 +42,10 @@ public class HospitalProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_profile);
+
+        // Tool bar
+        title = findViewById(R.id.head);
+        title.setText("Profile");
 
         // Form details
         name = findViewById(R.id.get_hospital_name);

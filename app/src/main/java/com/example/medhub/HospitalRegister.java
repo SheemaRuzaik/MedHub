@@ -25,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HospitalRegister extends AppCompatActivity {
 
+    // Title bar
+    TextView title;
     // Hospital object
     Hospital hospital;
     // Form details
@@ -46,6 +48,10 @@ public class HospitalRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_register);
 
+        // Tool bar
+        title = findViewById(R.id.head);
+        title.setText("Hospital Register");
+
         // Form details
         name = findViewById(R.id.hospital_name);
         address = findViewById(R.id.address);
@@ -63,7 +69,8 @@ public class HospitalRegister extends AppCompatActivity {
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HospitalRegister.this, HospitalLogin.class);
+                startActivity(intent);
             }
         });
 
@@ -113,12 +120,12 @@ public class HospitalRegister extends AppCompatActivity {
                         dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot snapshot) {
-                                if(snapshot.hasChild(hospital.getEmail())){
+                                if(snapshot.hasChild(hospital.getRegister_no())){
                                     Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
                                 }else{
-                                    dbref.child(hospital.getEmail()).setValue(hospital);
+                                    dbref.child(hospital.getRegister_no()).setValue(hospital);
                                     Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(HospitalRegister.this, HospitalProfile.class);
+                                    Intent intent = new Intent(getApplicationContext(), HospitalLogin.class);
                                     startActivity(intent);
                                 }
                             }

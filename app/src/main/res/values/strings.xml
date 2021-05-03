@@ -12,7 +12,7 @@
     <string name="email">Email - Required</string>
     <string name="contact_no">Phone Number - Required</string>
     <string name="address">Address - Required</string>
-    <string name="verification">Registration Number - Required</string>
+    <string name="verification">Registration No - Required</string>
     <string name="password">Password</string>
     <string name="con_password">Confirm Password</string>
     <string name="sign_up">  Sign Up</string>

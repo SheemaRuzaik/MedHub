@@ -53,7 +53,7 @@ public class PatientProfile extends AppCompatActivity {
         nic = findViewById(R.id.get_nic);
         email = findViewById(R.id.get_patient_email);
         contact = findViewById(R.id.get_patient_contact);
-        dob = findViewById(R.id.get_dob);
+        //dob = findViewById(R.id.get_dob);
         gender = findViewById(R.id.get_gender);
 
         // button

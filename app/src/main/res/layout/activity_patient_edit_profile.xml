@@ -64,7 +64,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
-                android:text="Kushal"
                 android:textSize="16dp"
                 android:paddingLeft="10dp"/>
 
@@ -82,7 +81,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
-                android:text="Perera"
                 android:textSize="16dp"
                 android:paddingLeft="10dp"/>
 
@@ -100,7 +98,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
-                android:text="kushal45@gmail.com"
                 android:textSize="16dp"
                 android:paddingLeft="10dp"/>
 
@@ -118,7 +115,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
-                android:text="902213564v"
                 android:textSize="16dp"
                 android:gravity=""
                 android:paddingLeft="10dp"/>
@@ -139,8 +135,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
-                android:inputType="date"
-                android:text="Male"
                 android:layout_marginLeft="0dp"
                 android:gravity=""
                 android:textSize="18dp"
@@ -162,7 +156,6 @@
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
                 android:inputType="number"
-                android:text="0712586492"
                 android:textSize="16dp"
                 android:paddingLeft="10dp"/>
 

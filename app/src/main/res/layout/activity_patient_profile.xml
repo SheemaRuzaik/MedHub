@@ -47,7 +47,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="25dp"
-            android:padding="0dp">
+            android:padding="10dp">
 
 
             <LinearLayout
@@ -68,10 +68,10 @@
                     android:id="@+id/get_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"
-                    android:text="Kushal"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -94,10 +94,10 @@
                     android:id="@+id/get_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"
-                    android:text="Perera"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -120,10 +120,10 @@
                     android:id="@+id/get_patient_email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"
-                    android:text="kushal45@gmail.com"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -146,39 +146,12 @@
                     android:id="@+id/get_nic"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"
-                    android:text="902213564v"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="20dp" />
 
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:text="Date Of Birth"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/get_dob"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="5dp"
-                    android:inputType="date"
-                    android:paddingLeft="10dp"
-                    android:text="22-Jun-1990"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -199,11 +172,11 @@
                     android:id="@+id/get_gender"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="15dp"
                     android:inputType="date"
                     android:paddingLeft="10dp"
-                    android:text="Male"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -226,11 +199,11 @@
                     android:id="@+id/get_patient_contact"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="15dp"
                     android:inputType="number"
                     android:paddingLeft="10dp"
-                    android:text="0712586492"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -279,7 +252,8 @@
                 android:text="Delete Account"
                 android:textSize="18dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"
                 android:background="@drawable/button_save_bg"
                 android:gravity="center"
                 android:layout_gravity="center"

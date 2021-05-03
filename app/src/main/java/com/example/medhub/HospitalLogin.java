@@ -27,10 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HospitalLogin extends AppCompatActivity {
 
+    // Title bar
+    TextView title;
     // Hospital object
     Hospital hospital;
     // Form details
-    EditText pwd,register;
+    EditText pwd,regNo;
     // Register link
     TextView sign_up;
     // navigation details
@@ -47,8 +49,12 @@ public class HospitalLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_login);
 
+        // Tool bar
+        title = findViewById(R.id.head);
+        title.setText("Hospital Login");
+
         // form details
-        register = findViewById(R.id.login_reg_no);
+        regNo = findViewById(R.id.login_reg_no);
         pwd = findViewById(R.id.login_hos_pwd);
 
         //Sign Up Link
@@ -57,50 +63,41 @@ public class HospitalLogin extends AppCompatActivity {
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HospitalLogin.this, HospitalProfile.class);
+                Intent intent = new Intent(HospitalLogin.this, HospitalRegister.class);
                 startActivity(intent);
 
             }
         });
 
+        hospital = new Hospital();
+        
         // Login
         sign_in = findViewById(R.id.hospital_login_to_profile);
 
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(register.getText().toString())){
-                    Toast.makeText(getApplicationContext(),"Register No cannot be empty",Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(regNo.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
                 } else if(TextUtils.isEmpty(pwd.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
                 } else {
-                    final String un=register.getText().toString().trim();
+                    final String un=regNo.getText().toString().trim();
                     final String pw=pwd.getText().toString().trim();
-                    hospital.setRegister_no(register.getText().toString().trim());
+                    hospital.setRegister_no(regNo.getText().toString().trim());
 
                     dbref= FirebaseDatabase.getInstance().getReference().child("Hospital");
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if((snapshot.hasChild(un))&&(snapshot.child(un).child("pwd").getValue().toString().equals(pw))){
-
-                                // Toast.makeText(getApplicationContext(),un,Toast.LENGTH_SHORT).show();
+                            if((snapshot.hasChild(un))&&(snapshot.child(un).child("password").getValue().toString().equals(pw))){
                                 SessionManagement sessionManagement=new SessionManagement(HospitalLogin.this);
                                 sessionManagement.saveHospitalSession(hospital);
+                                Toast.makeText(getApplicationContext(),"Login Successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), HospitalProfile.class);
                                 startActivity(intent);
                             }else{
-                                AlertDialog.Builder alertDialog=new AlertDialog.Builder(getApplicationContext());
-                                alertDialog.setMessage("Invalid register No or Password").setNeutralButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        finish();
-                                    }
-                                });
-                                //   AlertDialog dialog=alertDialog.create();
-                                // dialog.show();
-
-                                Toast.makeText(getApplicationContext(),"Invalid NIC or Password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Invalid Register No or Password", Toast.LENGTH_SHORT).show();
                             }
                         }
                         @Override

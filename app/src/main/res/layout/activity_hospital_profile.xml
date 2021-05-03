@@ -69,7 +69,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:textSize="16dp"
-                    android:layout_marginLeft="25dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"/>
 
             </LinearLayout>
@@ -93,7 +95,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="16dp"
-                    android:layout_marginLeft="25dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"/>
 
             </LinearLayout>
@@ -117,7 +121,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:textSize="16dp"
-                    android:layout_marginLeft="25dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
                     android:paddingLeft="10dp"/>
 
             </LinearLayout>
@@ -141,8 +147,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:paddingLeft="10dp"
-                    android:layout_marginLeft="25dp"/>
+                    android:layout_marginLeft="15dp"/>
 
             </LinearLayout>
 
@@ -165,8 +173,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:paddingLeft="10dp"
-                    android:layout_marginLeft="25dp"/>
+                    android:layout_marginLeft="15dp"/>
             </LinearLayout>
 
 

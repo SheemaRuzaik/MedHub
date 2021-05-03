@@ -24,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HospitalEditProfile extends AppCompatActivity {
 
+    // Title bar
+    TextView title;
     // Form details
     EditText name, email, address, phone;
     TextView register;
@@ -42,6 +44,10 @@ public class HospitalEditProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_edit_profile);
+
+        // Tool bar
+        title = findViewById(R.id.head);
+        title.setText("Edit Profile");
 
         // Form details
         name = findViewById(R.id.edit_hospital_name);
