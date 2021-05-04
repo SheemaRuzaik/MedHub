@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/drawer_pr"
+    android:background="@drawable/welcome"
     tools:context=".PatientRegister">
 
     <RelativeLayout
@@ -40,7 +41,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            android:background="@drawable/form_bg"
             android:layout_marginBottom="100dp"
             android:orientation="horizontal"
             android:layout_marginLeft="35dp"
@@ -160,11 +160,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:text="must enter 6 characters"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
 
                 <EditText
                     android:id="@+id/Patient_Cpwd"
@@ -186,7 +187,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="520dp"
+                android:layout_marginTop="480dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_marginRight="25dp"
@@ -219,7 +220,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="580dp"
+                android:layout_marginTop="540dp"
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginBottom="20dp">
@@ -230,8 +231,6 @@
                     android:layout_height="45dp"
                     android:text="@string/back"
                     android:textSize="18dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
                     android:background="@drawable/button_back_bg"
                     android:gravity="center"
                     android:textColor="@color/attention"
@@ -243,7 +242,6 @@
                     android:text="@string/sign_up"
                     android:textSize="18dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="0dp"
                     android:background="@drawable/button_save_bg"
                     android:gravity="center"
                     android:textColor="@color/white"

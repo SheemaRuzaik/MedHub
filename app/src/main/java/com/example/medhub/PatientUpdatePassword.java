@@ -50,10 +50,10 @@ public class PatientUpdatePassword extends AppCompatActivity {
         title.setText("Update Password");
 
         // form details
-        current_pwd = findViewById(R.id.pat_current_pwd);
+        //current_pwd = findViewById(R.id.pat_current_pwd);
         new_pwd = findViewById(R.id.pat_new_pwd);
         con_pwd = findViewById(R.id.pat_new_cpwd);
-        nic = findViewById(R.id.get_upnic);
+        //nic = findViewById(R.id.get_upnic);
 
         // Button
         update = findViewById(R.id.update_to_profile);
@@ -63,18 +63,6 @@ public class PatientUpdatePassword extends AppCompatActivity {
 
         upref= FirebaseDatabase.getInstance().getReference().child("Patient").child(un);
 
-        upref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                nic.setText(snapshot.child("nic").getValue().toString());
-                current_pwd.setText(snapshot.child("password").getValue().toString());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +73,7 @@ public class PatientUpdatePassword extends AppCompatActivity {
                     Toast.makeText(PatientUpdatePassword.this, "Confirm Password cannot Empty", Toast.LENGTH_SHORT).show();
                 }else{
                     if (new_pwd.getText().toString().equals(con_pwd.getText().toString().trim())){
-                        upref = FirebaseDatabase.getInstance().getReference().child("Patient").child(nic.getText().toString());
+                        upref = FirebaseDatabase.getInstance().getReference().child("Patient").child(un);
                         upref.child("password").setValue(new_pwd.getText().toString().trim());
 
                         Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
@@ -117,6 +105,14 @@ public class PatientUpdatePassword extends AppCompatActivity {
         my_book = findViewById(R.id.pat_chan_to_my_book);
         logout = findViewById(R.id.pat_chan_to_logout);
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,14 +121,28 @@ public class PatientUpdatePassword extends AppCompatActivity {
             }
         });
 
-        my_book.setOnClickListener(new View.OnClickListener() {
+        appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientUpdatePassword.this, MyBooking.class);
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
                 //startActivity(intent);
             }
         });
 
+        my_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
     }
 }

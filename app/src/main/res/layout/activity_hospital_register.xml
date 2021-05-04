@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_hr"
+    android:background="@drawable/welcome"
     android:orientation="vertical"
     tools:context=".HospitalRegister">
 
@@ -39,7 +40,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/form_bg"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="100dp"
             android:orientation="horizontal"
@@ -102,7 +102,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text=" * Enter National hospital"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
@@ -114,10 +115,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="    register verification number"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
                     android:layout_marginRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"/>
@@ -170,9 +171,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:text="must enter 6 characters"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"/>
 
@@ -197,7 +199,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="510dp"
+                android:layout_marginTop="500dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -229,7 +231,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="560dp"
+                android:layout_marginTop="550dp"
                 android:gravity="center"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
@@ -238,8 +240,6 @@
                     android:id="@+id/profile_contact_hospital"
                     android:layout_width="120dp"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
                     android:background="@drawable/button_back_bg"
                     android:gravity="center"
                     android:text="@string/back"
@@ -252,7 +252,6 @@
                     android:layout_width="120dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="0dp"
                     android:background="@drawable/button_save_bg"
                     android:gravity="center"
                     android:text="@string/sign_up"

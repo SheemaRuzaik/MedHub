@@ -116,11 +116,27 @@ public class PatientEditProfile extends AppCompatActivity {
         my_book = findViewById(R.id.pat_edit_prof_to_my_book);
         logout = findViewById(R.id.pat_edit_prof_to_logout);
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PatientEditProfile.this, PatientProfile.class);
                 startActivity(intent);
+            }
+        });
+
+        appointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
             }
         });
 
@@ -132,5 +148,12 @@ public class PatientEditProfile extends AppCompatActivity {
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
     }
 }

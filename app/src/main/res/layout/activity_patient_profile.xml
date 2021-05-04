@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/drawer_hp"
+    android:id="@+id/drawer_pp"
+    android:background="@drawable/user"
     tools:context=".PatientProfile">
 
     <RelativeLayout
@@ -35,7 +36,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="70dp"
-        android:background="@drawable/form_bg"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp">
 
@@ -43,7 +43,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/white"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="25dp"
@@ -222,27 +221,25 @@
                 android:layout_width="150dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_back_bg"
                 android:gravity="center"
                 android:text="Edit Profile"
-                android:textColor="@color/attention"
-                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/change_patient"
-                android:layout_width="180dp"
+                android:layout_width="200dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_back_bg"
                 android:gravity="center"
                 android:text="Change Password"
-                android:textColor="@color/attention"
-                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -250,8 +247,7 @@
                 android:layout_width="200dp"
                 android:layout_height="45dp"
                 android:text="Delete Account"
-                android:textSize="18dp"
-                android:layout_marginLeft="0dp"
+                android:textSize="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/button_save_bg"

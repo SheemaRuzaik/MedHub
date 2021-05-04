@@ -60,7 +60,7 @@ public class Hospital {
     }
 
     public boolean isRegNoValid(String reg_no) {
-        if((reg_no.length()==10 && reg_no.charAt(0)=='H') ) {
+        if((reg_no.length()==6 && reg_no.charAt(0)=='H') ) {
             return true;
         } else {
             return false;

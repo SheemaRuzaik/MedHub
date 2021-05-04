@@ -116,6 +116,22 @@ public class HospitalEditProfile extends AppCompatActivity {
         extra = findViewById(R.id.hos_edit_pro_to_extra);
         logout = findViewById(R.id.hos_edit_pro_to_logout);
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
+        doctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +140,29 @@ public class HospitalEditProfile extends AppCompatActivity {
             }
         });
 
+        appointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
 
+        extra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
     }
 
     @Override

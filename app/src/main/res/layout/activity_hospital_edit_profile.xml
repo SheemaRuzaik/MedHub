@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/drawer_hep"
+    android:background="@drawable/hospital"
     tools:context=".HospitalEditProfile">
 
     <RelativeLayout
@@ -33,7 +34,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="555dp"
-        android:background="@drawable/form_bg"
         android:layout_marginTop="85dp"
         android:layout_marginBottom="100dp"
         android:layout_marginLeft="35dp"
@@ -42,7 +42,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:orientation="vertical"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
@@ -55,7 +54,7 @@
                 android:text="Hospital Name"
                 android:textSize="18dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
             <EditText
@@ -73,7 +72,7 @@
                 android:text="Email"
                 android:textSize="18dp"
                 android:layout_marginTop="15dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
             <EditText
@@ -91,7 +90,7 @@
                 android:text="Hospital Address"
                 android:textSize="18dp"
                 android:layout_marginTop="15dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
             <EditText
@@ -109,7 +108,7 @@
                 android:text="Hospital Verification"
                 android:textSize="18dp"
                 android:layout_marginTop="15dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
             <TextView
@@ -120,7 +119,8 @@
                 android:inputType="number"
                 android:hint="Enter hospital verification number"
                 android:textSize="16dp"
-                android:gravity=""
+                android:textStyle="bold"
+                android:paddingTop="7dp"
                 android:paddingLeft="10dp"/>
 
 
@@ -130,7 +130,7 @@
                 android:text="Phone Number"
                 android:textSize="18dp"
                 android:layout_marginTop="15dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
             <EditText
@@ -149,10 +149,9 @@
                 android:layout_width="180dp"
                 android:layout_height="45dp"
                 android:text="Save"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_save_bg"
                 android:gravity="center"
                 android:textColor="@color/white"

@@ -52,10 +52,10 @@ public class HospitalUpdatePassword extends AppCompatActivity {
         title.setText("Update Password");
 
         // form details
-        current_pwd = findViewById(R.id.hos_current_pwd);
+        //current_pwd = findViewById(R.id.hos_current_pwd);
         new_pwd = findViewById(R.id.hos_new_pwd);
         con_pwd = findViewById(R.id.hos_new_cpwd);
-        register = findViewById(R.id.get_upreg);
+        //register = findViewById(R.id.get_upreg);
 
         // Button
         update = findViewById(R.id.update_to_profile_hospital);
@@ -63,20 +63,6 @@ public class HospitalUpdatePassword extends AppCompatActivity {
         final SessionManagement sessionManagement=new SessionManagement(HospitalUpdatePassword.this);
         String un=sessionManagement.getHospitalSession();
 
-        upref= FirebaseDatabase.getInstance().getReference().child("Hospital").child(un);
-
-        upref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                register.setText(snapshot.child("register_no").getValue().toString());
-                current_pwd.setText(snapshot.child("password").getValue().toString());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +73,7 @@ public class HospitalUpdatePassword extends AppCompatActivity {
                     Toast.makeText(HospitalUpdatePassword.this, "Confirm Password cannot Empty", Toast.LENGTH_SHORT).show();
                 }else{
                     if (new_pwd.getText().toString().equals(con_pwd.getText().toString().trim())){
-                        upref = FirebaseDatabase.getInstance().getReference().child("Hospital").child(register.getText().toString());
+                        upref = FirebaseDatabase.getInstance().getReference().child("Hospital").child(un);
                         upref.child("password").setValue(new_pwd.getText().toString().trim());
 
                         Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
@@ -120,6 +106,22 @@ public class HospitalUpdatePassword extends AppCompatActivity {
         extra = findViewById(R.id.hos_chan_to_extra);
         logout = findViewById(R.id.hos_chan_to_logout);
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
+        doctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,8 +130,29 @@ public class HospitalUpdatePassword extends AppCompatActivity {
             }
         });
 
+        appointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
 
+        extra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
+                //startActivity(intent);
+            }
+        });
     }
 
     @Override
