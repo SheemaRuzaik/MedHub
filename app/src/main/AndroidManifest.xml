@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MedHub">
-        <activity android:name=".FindDoctor"></activity>
+        <activity android:name=".FindDoctor" />
+
+
         <activity android:name=".welcomepage" />
+
         <activity android:name=".SearchAppointment" />
         <activity android:name=".ViewAppointment" />
         <activity android:name=".EditPayment_Info" />
