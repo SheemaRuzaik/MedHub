@@ -26,7 +26,7 @@ public class PatientProfile extends AppCompatActivity {
     // Title bar
     TextView title;
     // Form details
-    TextView first_name, last_name, nic, email, contact, dob, gender;
+    TextView full_name, nic, email, contact, dob, gender;
     // Button
     TextView edit, change, delete;
     // navigation button
@@ -48,8 +48,7 @@ public class PatientProfile extends AppCompatActivity {
         title.setText("Profile");
 
         // Form details
-        first_name = findViewById(R.id.get_first_name);
-        last_name = findViewById(R.id.get_last_name);
+        full_name = findViewById(R.id.get_full_name);
         nic = findViewById(R.id.get_nic);
         email = findViewById(R.id.get_patient_email);
         contact = findViewById(R.id.get_patient_contact);
@@ -69,8 +68,7 @@ public class PatientProfile extends AppCompatActivity {
         dbref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                first_name.setText(snapshot.child("first_name").getValue().toString());
-                last_name.setText(snapshot.child("last_name").getValue().toString());
+                full_name.setText(snapshot.child("full_name").getValue().toString());
                 email.setText(snapshot.child("email").getValue().toString());
                 nic.setText(snapshot.child("nic").getValue().toString());
                 gender.setText(snapshot.child("gender").getValue().toString());
@@ -166,8 +164,8 @@ public class PatientProfile extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientProfile.this, WelcomePage.class);
+                startActivity(intent);
             }
         });
     }

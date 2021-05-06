@@ -38,7 +38,7 @@ public class HospitalRegister extends AppCompatActivity {
     private NavigationView navigationView;
     private Toolbar toolbar;
     //Button
-    TextView back, sign_up;
+    TextView sign_up;
 
     FirebaseAuthException firebaseAuthException;
     DatabaseReference dbref;
@@ -75,16 +75,7 @@ public class HospitalRegister extends AppCompatActivity {
         });
 
         // Button
-        back = findViewById(R.id.profile_contact_hospital);
         sign_up = findViewById(R.id.register_to_profile_hospital);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(HospitalRegister.this, HospitalRegisterContact.class);
-                //startActivity(intent);
-            }
-        });
 
         hospital = new Hospital();
 

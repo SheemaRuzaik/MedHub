@@ -5,8 +5,7 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string name="fname">First Name - Required</string>
-    <string name="lname">Last Name - Required</string>
+    <string name="fullname">Full Name - Required</string>
     <string name="hname">Hospital Name - Required</string>
     <string name="nic">NIC - Required</string>
     <string name="email">Email - Required</string>

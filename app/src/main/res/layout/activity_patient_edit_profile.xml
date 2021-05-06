@@ -53,35 +53,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:text="First Name"
+                android:text="Full Name"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edit_first_name"
+                android:id="@+id/edit_full_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:hint="@string/fullname"
                 android:background="@drawable/input_bg"
                 android:textSize="16dp"
                 android:paddingLeft="10dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:text="Last Name"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/edit_last_name"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/input_bg"
-                android:textSize="16dp"
-                android:paddingLeft="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -98,6 +83,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
                 android:textSize="16dp"
+                android:hint="@string/email"
                 android:paddingLeft="10dp"/>
 
             <TextView
@@ -115,6 +101,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
                 android:textSize="16dp"
+                android:hint="@string/nic"
                 android:textStyle="bold"
                 android:paddingTop="7dp"
                 android:paddingLeft="10dp"/>
@@ -135,6 +122,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
                 android:textSize="18dp"
+                android:hint="Gender - Required"
                 android:textStyle="bold"
                 android:paddingTop="7dp"
                 android:paddingLeft="10dp"/>
@@ -155,6 +143,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/input_bg"
                 android:inputType="number"
+                android:hint="@string/contact_no"
                 android:textSize="16dp"
                 android:paddingLeft="10dp"/>
 
@@ -166,7 +155,7 @@
                 android:text="Save"
                 android:layout_gravity="center"
                 android:textSize="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/button_save_bg"
                 android:gravity="center"
                 android:textColor="@color/white"

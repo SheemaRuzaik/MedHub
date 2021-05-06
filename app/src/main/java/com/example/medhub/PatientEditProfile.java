@@ -25,7 +25,7 @@ public class PatientEditProfile extends AppCompatActivity {
     // Title bar
     TextView title;
     // Form details
-    EditText first_name, last_name, email, contact;
+    EditText full_name, email, contact;
     TextView nic, gender;
     // navigation button
     ImageView home, profile, appointment, my_book, logout;
@@ -48,8 +48,7 @@ public class PatientEditProfile extends AppCompatActivity {
         title.setText("Edit Profile");
 
         // Form details
-        first_name = findViewById(R.id.edit_first_name);
-        last_name = findViewById(R.id.edit_last_name);
+        full_name = findViewById(R.id.full_name);
         nic = findViewById(R.id.edit_nic);
         email = findViewById(R.id.edit_patient_email);
         contact = findViewById(R.id.edit_patient_contact_no);
@@ -67,8 +66,7 @@ public class PatientEditProfile extends AppCompatActivity {
         dbref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                first_name.setText(snapshot.child("first_name").getValue().toString());
-                last_name.setText(snapshot.child("last_name").getValue().toString());
+                full_name.setText(snapshot.child("full_name").getValue().toString());
                 email.setText(snapshot.child("email").getValue().toString());
                 nic.setText(snapshot.child("nic").getValue().toString());
                 gender.setText(snapshot.child("gender").getValue().toString());
@@ -85,8 +83,7 @@ public class PatientEditProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 upref= FirebaseDatabase.getInstance().getReference().child("Patient").child(nic.getText().toString());
-                upref.child("first_name").setValue(first_name.getText().toString().trim());
-                upref.child("last_name").setValue(last_name.getText().toString().trim());
+                upref.child("full_name").setValue(full_name.getText().toString().trim());
                 upref.child("email").setValue(email.getText().toString().trim());
                 upref.child("nic").setValue(nic.getText().toString().trim());
                 upref.child("gender").setValue(gender.getText().toString().trim());
@@ -151,8 +148,8 @@ public class PatientEditProfile extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientEditProfile.this, WelcomePage.class);
+                startActivity(intent);
             }
         });
     }

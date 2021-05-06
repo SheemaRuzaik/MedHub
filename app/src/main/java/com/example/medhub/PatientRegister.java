@@ -39,14 +39,14 @@ public class PatientRegister extends AppCompatActivity {
     // Patient class object
     Patient patient;
     // Form details
-    EditText first_name, last_name, nic, pwd, cpwd, email, contact;
+    EditText full_name, nic, pwd, cpwd, email, contact;
     private DatePickerDialog datePickerDialog;
     //private Button datebtn;
     Spinner spinner;
     // login link
     TextView sign_in;
     // button
-    TextView back, sign_up;
+    TextView sign_up;
     // navigation details
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -65,8 +65,7 @@ public class PatientRegister extends AppCompatActivity {
         title.setText("Patient Register");
 
         // Form details
-        first_name = findViewById(R.id.First_name);
-        last_name = findViewById(R.id.Last_name);
+        full_name = findViewById(R.id.full_name);
         nic = findViewById(R.id.Nic);
         pwd = findViewById(R.id.Patient_Pwd);
         cpwd = findViewById(R.id.Patient_Cpwd);
@@ -117,27 +116,17 @@ public class PatientRegister extends AppCompatActivity {
             }
         });
         // Button
-        back = findViewById(R.id.profile_home);
         sign_up = findViewById(R.id.Register_to_profile);
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(PatientRegister.this, PatientRegisterContact.class);
-                //startActivity(intent);
-            }
-        });
 
         patient = new Patient();
 
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(first_name.getText().toString())){
-                    Toast.makeText(getApplicationContext(),"First name cannot be empty",Toast.LENGTH_SHORT).show();
-                }else if(TextUtils.isEmpty(last_name.getText().toString())){
-                    Toast.makeText(getApplicationContext(),"Last name cannot be empty",Toast.LENGTH_SHORT).show();
-                }else if(TextUtils.isEmpty(nic.getText().toString())){
+                if(TextUtils.isEmpty(full_name.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Full name cannot be empty",Toast.LENGTH_SHORT).show();
+                }else  if(TextUtils.isEmpty(nic.getText().toString())){
                     Toast.makeText(getApplicationContext(),"NIC no cannot be empty",Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(email.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
@@ -153,8 +142,7 @@ public class PatientRegister extends AppCompatActivity {
 
                             dbref = FirebaseDatabase.getInstance().getReference().child("Patient");
 
-                            patient.setFirst_name(first_name.getText().toString().trim());
-                            patient.setLast_name(last_name.getText().toString().trim());
+                            patient.setFull_name(full_name.getText().toString().trim());
                             patient.setEmail(email.getText().toString().trim());
                             patient.setNic(nic.getText().toString().trim());
                             patient.setGender(spinner.getSelectedItem().toString().trim());

@@ -43,8 +43,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="25dp"
             android:padding="10dp">
 
@@ -56,41 +54,15 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:text="First Name"
+                    android:text="Full Name :"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/get_first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="15dp"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:text="Last Name"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/get_last_name"
+                    android:id="@+id/get_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginLeft="15dp"
@@ -108,9 +80,9 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:text="Email"
+                    android:text="Email :"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -134,9 +106,9 @@
                 android:layout_marginTop="15dp">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:text="NIC"
+                    android:text="NIC :"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -160,9 +132,9 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:text="Gender"
+                    android:text="Gender :"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -187,9 +159,9 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:text="Phone No"
+                    android:text="Phone No :"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -210,7 +182,7 @@
             <View
                 android:layout_width="250dp"
                 android:layout_height="2dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:layout_gravity="center"
                 android:background="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -221,7 +193,7 @@
                 android:layout_width="150dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/button_back_bg"
                 android:gravity="center"
                 android:text="Edit Profile"
@@ -234,7 +206,7 @@
                 android:layout_width="200dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/button_back_bg"
                 android:gravity="center"
                 android:text="Change Password"
@@ -248,7 +220,7 @@
                 android:layout_height="45dp"
                 android:text="Delete Account"
                 android:textSize="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/button_save_bg"
                 android:gravity="center"

@@ -171,8 +171,8 @@ public class HospitalProfile extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(HospitalProfile.this, WelcomePage.class);
+                startActivity(intent);
             }
         });
     }
