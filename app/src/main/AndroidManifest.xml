@@ -17,14 +17,22 @@
         <activity android:name=".SearchAppointment" />
         <activity android:name=".ViewAppointment" />
         <activity android:name=".EditPayment_Info" />
-        <activity android:name=".AddInfo_Payment" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".AddInfo_Payment" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
         </activity>
+        <activity android:name=".MainActivity">
+
+
+        </activity>
+
+
+
+
     </application>
 
 </manifest>

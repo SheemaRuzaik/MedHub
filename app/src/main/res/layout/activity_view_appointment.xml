@@ -5,7 +5,7 @@
     android:id="@+id/Viewfour"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroun"
+    android:background="@drawable/user"
     android:orientation="vertical"
     tools:context=".ViewAppointment">
 
@@ -171,51 +171,56 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="404dp"
         android:layout_height="46dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="684dp"
-        android:layout_marginBottom="1dp"
         android:background="@drawable/input_bg"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/pat_prof_to_home"
+            android:id="@+id/hos_pro_to_home"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_outline_home_24" />
+            android:src="@drawable/home_bottom" />
 
         <ImageView
-            android:id="@+id/pat_prof"
+            android:id="@+id/hos_pro_to_doctors"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/group_bottom" />
+
+        <ImageView
+            android:id="@+id/hos_prof"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_baseline_person_24" />
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/person_bottom_red" />
 
         <ImageView
-            android:id="@+id/pat_prof_to_appointment"
+            android:id="@+id/hos_prof_to_appointment"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/make_appointment" />
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/event_available_bottom" />
 
         <ImageView
-            android:id="@+id/pat_prof_to_my_book"
+            android:id="@+id/hos_prof_to_extra"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_baseline_event_available_24" />
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/add_box_bottom" />
 
         <ImageView
-            android:id="@+id/pat_prof_to_logout"
+            android:id="@+id/hos_prof_to_logout"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_outline_login_24" />
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/login_bottom" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

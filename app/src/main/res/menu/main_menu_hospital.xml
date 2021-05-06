@@ -5,31 +5,31 @@
         <item
             android:id="@+id/home_hospital"
             android:title="Home"
-            android:icon="@drawable/ic_baseline_home_24"/>
+            android:icon="@drawable/home"/>
 
         <item android:id="@+id/add_doctor"
             android:title="Add Doctors"
-            android:icon="@drawable/ic_baseline_person_add_24"/>
+            android:icon="@drawable/person_add"/>
 
         <item android:id="@+id/view_doctors"
             android:title="View Doctors"
-            android:icon="@drawable/ic_baseline_group_24"/>
+            android:icon="@drawable/group"/>
 
         <item android:id="@+id/view_appointment"
             android:title="View Appointments"
-            android:icon="@drawable/ic_baseline_event_24"/>
+            android:icon="@drawable/event"/>
 
         <item android:id="@+id/profile_hospital"
             android:title="Profile"
-            android:icon="@drawable/ic_baseline_person_24"/>
+            android:icon="@drawable/person"/>
 
         <item android:id="@+id/extra_service"
             android:title="Extra Service"
-            android:icon="@drawable/ic_baseline_add_box_24"/>
+            android:icon="@drawable/add_box"/>
 
         <item android:id="@+id/logout_hospital"
             android:title="Logout"
-            android:icon="@drawable/ic_baseline_login_24"/>
+            android:icon="@drawable/login"/>
 
         <item android:id="@+id/about_us_hospital"
             android:title="About Us"
@@ -37,15 +37,15 @@
 
         <item android:id="@+id/terms_condition_hospital"
             android:title="@string/terms_conditions"
-            android:icon="@drawable/ic_baseline_text_snippet_24"/>
+            android:icon="@drawable/text_snippet"/>
 
         <item android:id="@+id/privary_hospital"
             android:title="Privacy Policy"
-            android:icon="@drawable/ic_baseline_settings_24"/>
+            android:icon="@drawable/settings"/>
 
         <item android:id="@+id/contact_hospital"
             android:title="Contact"
-            android:icon="@drawable/ic_baseline_phone_android_24"/>
+            android:icon="@drawable/phone_android"/>
 
 
     </group>

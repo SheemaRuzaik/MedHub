@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_copyright_24"
+            android:drawableLeft="@drawable/copyright"
             android:text=" MedHub PVT LTD. ALL RIGHTS RESERVED."
             android:textSize="12dp"
             android:layout_gravity="center"

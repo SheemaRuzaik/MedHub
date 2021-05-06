@@ -26,12 +26,12 @@
         app:layout_constraintVertical_bias="0.183" />
 
     <Button
-        android:id="@+id/edit"
+        android:id="@+id/patientlogin"
         android:layout_width="179dp"
         android:layout_height="70dp"
         android:layout_marginEnd="40dp"
         android:backgroundTint="#154E87"
-        android:drawableLeft="@drawable/ic_baseline_security_24"
+        android:drawableLeft="@drawable/security"
         android:text="MedHub"
         android:textColor="#A6BCD1"
         android:textColorHighlight="#FFFFFF"
@@ -42,5 +42,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.891" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,17 +2,32 @@ package com.sliit.medhub;
 
 public class Payment {
 
+    private Integer payID=100;
     private String PatientName;
-    private String phoneNumber;
+    private Integer phoneNumber;
     private String NIC;
-    private String Age;
-    private String Gender;
+    private Integer Age;
+    //private String Gender;
     private String CardType;
-    private String CardNumber;
+    private Integer CardNumber;
     private String NameOnCard;
     private String ExpDate;
-    private String CVC;
+    private Integer CVC;
 
+    public Payment() {
+    }
+
+
+    public Integer getPayID() {
+
+        payID=payID+1;
+
+        return payID;
+    }
+
+    public void setPayID(Integer payID) {
+        this.payID = payID;
+    }
 
     public String getPatientName() {
         return PatientName;
@@ -22,11 +37,11 @@ public class Payment {
         PatientName = patientName;
     }
 
-    public String getPhoneNumber() {
+    public Integer getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(Integer phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -38,21 +53,21 @@ public class Payment {
         this.NIC = NIC;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return Age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         Age = age;
     }
 
-    public String getGender() {
-        return Gender;
-    }
+   // public String getGender() {
+  //      return Gender;
+  //  }
 
-    public void setGender(String gender) {
-        Gender = gender;
-    }
+  //  public void setGender(String gender) {
+  //      Gender = gender;
+   // }
 
     public String getCardType() {
         return CardType;
@@ -62,11 +77,11 @@ public class Payment {
         CardType = cardType;
     }
 
-    public String getCardNumber() {
+    public Integer getCardNumber() {
         return CardNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
+    public void setCardNumber(Integer cardNumber) {
         CardNumber = cardNumber;
     }
 
@@ -86,17 +101,11 @@ public class Payment {
         ExpDate = expDate;
     }
 
-    public String getCVC() {
+    public Integer getCVC() {
         return CVC;
     }
 
-    public void setCVC(String CVC) {
+    public void setCVC(Integer CVC) {
         this.CVC = CVC;
     }
-
-
-
-
-
-
 }

@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_menu_24"/>
+        android:src="@drawable/menu"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_more_vert_24"
+        android:src="@drawable/more_vert"
         android:layout_marginLeft="160dp"/>
 
 </androidx.appcompat.widget.Toolbar>
