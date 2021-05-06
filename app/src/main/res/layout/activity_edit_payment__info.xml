@@ -120,29 +120,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/cardtype6"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="318dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="389dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:hint="@string/Gender"
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/cardtype7"
+        android:id="@+id/editAge"
         android:layout_width="215dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
@@ -161,7 +141,7 @@
         app:layout_constraintVertical_bias="0.405" />
 
     <EditText
-        android:id="@+id/cardtype5"
+        android:id="@+id/editNIC"
         android:layout_width="215dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
@@ -178,7 +158,7 @@
         app:layout_constraintVertical_bias="0.362" />
 
     <EditText
-        android:id="@+id/cardtype4"
+        android:id="@+id/editPhoneNumber"
         android:layout_width="215dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
@@ -211,7 +191,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/cardtype13"
+        android:id="@+id/editPatientName"
         android:layout_width="215dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
@@ -332,21 +312,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginBottom="389dp"
-        android:text="Gender:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView8"
@@ -494,7 +459,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/makepay"
+        android:id="@+id/Save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="296dp"
@@ -510,7 +475,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Pay"
+        android:id="@+id/Delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="616dp"

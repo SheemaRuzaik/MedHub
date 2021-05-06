@@ -18,7 +18,7 @@ public class Payment {
     }
 
 
-    public Integer getPayID() {
+    public Integer  getPayID() {
 
         payID=payID+1;
 
