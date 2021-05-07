@@ -24,7 +24,7 @@
       app:layout_constraintVertical_bias="0.19999999" />
 
   <EditText
-      android:id="@+id/inputName"
+      android:id="@+id/inputMail"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="32dp"
@@ -43,14 +43,14 @@
       android:paddingRight="20dp"
       android:textColor="@color/white"
       android:textColorHint="@color/white"
-      app:layout_constraintBottom_toTopOf="@+id/inputPhoneNo"
+      app:layout_constraintBottom_toTopOf="@+id/inputPass"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/logo" />
 
   <EditText
-      android:id="@+id/inputPhoneNo"
+      android:id="@+id/inputPass"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginTop="44dp"
@@ -59,16 +59,25 @@
       android:drawableLeft="@drawable/ic_phone"
       android:drawablePadding="10dp"
       android:ems="10"
-      android:hint="Enter Your Phone Number"
+      android:hint="Password"
       android:inputType="textPersonName"
       android:paddingLeft="20dp"
       android:paddingRight="20dp"
       android:textColor="@color/white"
       android:textColorHint="@color/white"
       app:layout_constraintBottom_toTopOf="@+id/inputAddress"
-      app:layout_constraintEnd_toEndOf="@+id/inputName"
+      app:layout_constraintEnd_toEndOf="@+id/inputMail"
       app:layout_constraintHorizontal_bias="1.0"
-      app:layout_constraintStart_toStartOf="@+id/inputName"
-      app:layout_constraintTop_toBottomOf="@+id/inputName" />
+      app:layout_constraintStart_toStartOf="@+id/inputMail"
+      app:layout_constraintTop_toBottomOf="@+id/inputMail" />
+
+  <Button
+      android:id="@+id/login"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Login"
+      app:layout_constraintEnd_toEndOf="@+id/inputPass"
+      app:layout_constraintStart_toStartOf="@+id/inputPass"
+      tools:layout_editor_absoluteY="341dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
