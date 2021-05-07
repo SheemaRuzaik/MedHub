@@ -29,6 +29,7 @@ public class EditPayment_Info extends AppCompatActivity {
 
     //Form input
     EditText txtPatientName, txtPhoneNumber, txtNIC, txtAge;
+    TextView txtpayID;
 
     // navigation button
     ImageView home, doctor, profile, appointment, extra, logout;
@@ -57,22 +58,23 @@ public class EditPayment_Info extends AppCompatActivity {
         txtPhoneNumber = findViewById(R.id.editPhoneNumber);
         txtNIC = findViewById(R.id.editNIC);
         txtAge = findViewById(R.id.editAge);
+        txtpayID=findViewById(R.id.viewpayID);
 
         //Button
         bttnSave = findViewById(R.id.Save);
 
-        final SessionManagement sessionManagement = new SessionManagement(HospitalEditProfile.this);
-        String un = sessionManagement.getHospitalSession();
+        final SessionManagement sessionManagement = new SessionManagement(EditPayment_Info.this);
+        Integer un = sessionManagement.getSession();
 
-        dbref = FirebaseDatabase.getInstance().getReference().child("Payment").child(un);
+        dbref = FirebaseDatabase.getInstance().getReference().child("Payment").child(un.toString());
 
         dbref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                txtPatientName.setText(snapshot.child("name").getValue().toString());
-                txtPhoneNumber.setText(snapshot.child("email").getValue().toString());
-                txtNIC.setText(snapshot.child("register_no").getValue().toString());
-                txtAge.setText(snapshot.child("phone").getValue().toString());
+                txtPatientName.setText(snapshot.child("PatientName").getValue().toString());
+                txtPhoneNumber.setText(snapshot.child("phoneNumber").getValue().toString());
+                txtNIC.setText(snapshot.child("NIC").getValue().toString());
+                txtAge.setText(snapshot.child("Age").getValue().toString());
             }
 
 
@@ -87,15 +89,15 @@ public class EditPayment_Info extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                upref= FirebaseDatabase.getInstance().getReference().child("Payment").child(register.getText().toString());
-                upref.child("name").setValue(txtPatientName.getText().toString().trim());
-                upref.child("email").setValue(txtPhoneNumber.getText().toString().trim());
-                upref.child("register_no").setValue(txtNIC.getText().toString().trim());
-                upref.child("address").setValue(txtAge.getText().toString().trim());
+                upref= FirebaseDatabase.getInstance().getReference().child("Payment").child(txtpayID.getText().toString());
+                upref.child("PatientName").setValue(txtPatientName.getText().toString().trim());
+                upref.child("phoneNumber").setValue(txtPhoneNumber.getText().toString().trim());
+                upref.child("NIC").setValue(txtNIC.getText().toString().trim());
+                upref.child("Age").setValue(txtAge.getText().toString().trim());
 
                 Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(HospitalEditProfile.this, HospitalProfile.class);
+                Intent intent = new Intent(EditPayment_Info.this, ViewAppointment.class);
                 startActivity(intent);
             }
         });

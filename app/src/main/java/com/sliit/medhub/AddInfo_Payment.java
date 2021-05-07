@@ -29,7 +29,6 @@ public class AddInfo_Payment extends AppCompatActivity {
     // Title bar
     TextView title;
 
-
     //Payment Object
     Payment payment;
 
@@ -104,45 +103,49 @@ public class AddInfo_Payment extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Expiry Date  cannot be empty", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(txtCVC.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "CVC  cannot be empty", Toast.LENGTH_SHORT).show();
-                } else
+                } else {
                     dbref = FirebaseDatabase.getInstance().getReference().child("Payment");
 
-                payment.setPatientName(txtPatientName.getText().toString().trim());
-                payment.setPhoneNumber(Integer.parseInt(txtPhoneNumber.getText().toString().trim()));
-                payment.setNIC(txtNIC.getText().toString().trim());
-                payment.setAge(Integer.parseInt(txtAge.getText().toString().trim()));
-                payment.setCardType(txtCardType.getText().toString().trim());
-                payment.setCardNumber(Integer.parseInt(txtCardNumber.getText().toString().trim()));
-                payment.setNameOnCard(txtNameOnCard.getText().toString().trim());
-                payment.setExpDate(txtExpDate.getText().toString().trim());
-                payment.setCVC(Integer.parseInt(txtCVC.getText().toString().trim()));
+                    payment.setPatientName(txtPatientName.getText().toString().trim());
+                    payment.setPhoneNumber(Integer.parseInt(txtPhoneNumber.getText().toString().trim()));
+                    payment.setNIC(txtNIC.getText().toString().trim());
+                    payment.setAge(Integer.parseInt(txtAge.getText().toString().trim()));
+                    payment.setCardType(txtCardType.getText().toString().trim());
+                    payment.setCardNumber(Integer.parseInt(txtCardNumber.getText().toString().trim()));
+                    payment.setNameOnCard(txtNameOnCard.getText().toString().trim());
+                    payment.setExpDate(txtExpDate.getText().toString().trim());
+                    payment.setCVC(Integer.parseInt(txtCVC.getText().toString().trim()));
 
-                dbref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        if (snapshot.hasChild(payment.getPayID())) {
+                    dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot snapshot) {
+                            if (snapshot.hasChild(payment.getPayID().toString())) {
 
-                            Toast.makeText(getApplicationContext(), "Payment ID already exists", Toast.LENGTH_SHORT).show();
-                        } else {
-                            dbref.child(payment.getPayID()).setValue(payment);
+                                Toast.makeText(getApplicationContext(), "Payment ID already exists", Toast.LENGTH_SHORT).show();
+                            } else {
+                                dbref.child(payment.getPayID().toString()).setValue(payment);
 
-                            Toast.makeText(getApplicationContext(), "Successfully placed your appointment", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), ViewAppointment.class);
-                            startActivity(intent);
+                                Toast.makeText(getApplicationContext(), "Successfully placed your appointment", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), ViewAppointment.class);
+                                startActivity(intent);
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError error) {
+                        @Override
+                        public void onCancelled(DatabaseError error) {
 
-                    }
+                        }
 
-                });
+                    });
 
 
+                }
             }
 
         });
+
+
+
 
         // navigation implement
        // constraintLayout = findViewById(R.id.drawer_hr);
@@ -156,17 +159,8 @@ public class AddInfo_Payment extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                constraintLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
-    }
+
 
     private void clearControls() {
         txtPatientName.setText("");

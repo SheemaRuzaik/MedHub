@@ -175,8 +175,8 @@
         app:layout_constraintVertical_bias="0.316" />
 
 
-    <EditText
-        android:id="@+id/cardtype3"
+    <TextView
+        android:id="@+id/viewpayID"
         android:layout_width="215dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
