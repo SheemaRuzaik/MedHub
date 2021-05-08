@@ -119,17 +119,26 @@ public class AddInfo_Payment extends AppCompatActivity {
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot snapshot) {
-                            if (snapshot.hasChild(payment.getPayID().toString())) {
 
-                                Toast.makeText(getApplicationContext(), "Payment ID already exists", Toast.LENGTH_SHORT).show();
-                            } else {
+
+
                                 dbref.child(payment.getPayID().toString()).setValue(payment);
+
+                            SessionManagement sessionManagement=new SessionManagement(AddInfo_Payment.this);
+                            sessionManagement.saveSession(payment);
 
                                 Toast.makeText(getApplicationContext(), "Successfully placed your appointment", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), ViewAppointment.class);
+                               // intent.putExtra("paymentID",payID);
+                               // intent.putExtra("patientname",txtPatientName.getText().toString());
+                                //intent.putExtra("phonenumber",Integer.parseInt(txtPhoneNumber.getText().toString()));
+                              //  intent.putExtra("NIC",txtNIC.getText().toString());
+                               // intent.putExtra("Age",Integer.parseInt(txtAge.getText().toString()));
+
+
                                 startActivity(intent);
                             }
-                        }
+
 
                         @Override
                         public void onCancelled(DatabaseError error) {

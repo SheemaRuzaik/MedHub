@@ -31,5 +31,12 @@ public class SessionManagement {
     }
 
 
+    public void removeSession(){
+
+        editor.putString(SESSION_KEY,"No user").commit();
+
+
+    }
+
 
 }

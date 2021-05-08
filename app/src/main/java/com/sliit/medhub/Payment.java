@@ -108,4 +108,45 @@ public class Payment {
     public void setCVC(Integer CVC) {
         this.CVC = CVC;
     }
-}
+
+
+
+    //testing methods
+
+    public boolean isNICValid(String NIC) {
+        if((NIC.length()==10 && NIC.charAt(9)=='V') || (NIC.length()==12)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isPhoneNumberValid(String phoneNumber){
+        if(phoneNumber.length()==10){
+            return true;
+        }else {
+            return false;
+        }
+//
+//     public boolean isCVCValid(String CVC){
+//            if(CVC.length()==3){
+//                return true;
+//            }else{
+//                return false;
+//            }
+//
+//        }
+//
+//
+//    public boolean isCardNumValid(String cardNum){
+//            if (cardNum.length()==16){
+//                return true;
+//            }else{
+//
+//                return false;
+//            }
+
+        }
+    }
+
+

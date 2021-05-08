@@ -18,9 +18,10 @@
 
 
     <Button
-        android:id="@+id/Delete"
+        android:id="@+id/search_for_doc"
         android:layout_width="141dp"
         android:layout_height="62dp"
+        android:layout_marginStart="135dp"
         android:layout_marginTop="563dp"
         android:layout_marginBottom="106dp"
         android:backgroundTint="#E63131"
@@ -30,8 +31,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView16"
@@ -52,43 +55,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/consultantspinner"
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="251dp"
+        android:layout_marginTop="252dp"
         android:background="@android:drawable/btn_dropdown"
         android:backgroundTint="#ACD6FF"
         android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/hospitalspinner"
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="333dp"
+        android:layout_marginTop="332dp"
         android:background="@android:drawable/btn_dropdown"
         android:backgroundTint="#ACD6FF"
         android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="329dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="503dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:backgroundTint="#ACD6FF"
-        android:spinnerMode="dialog"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/specialspinner"
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginStart="52dp"
@@ -123,9 +118,8 @@
         android:layout_width="195dp"
         android:layout_height="36dp"
         android:layout_marginStart="53dp"
-        android:layout_marginTop="384dp"
         android:layout_marginEnd="163dp"
-        android:layout_marginBottom="139dp"
+        android:layout_marginBottom="311dp"
         android:gravity="center_vertical"
         android:text="Specialization:"
         android:textColor="#BA1C1818"
@@ -133,45 +127,19 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="195dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="467dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="75dp"
-        android:gravity="center_vertical"
-        android:text="Date:"
-        android:textColor="#BA1C1818"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="290dp"
+        android:layout_width="409dp"
         android:layout_height="28dp"
-        android:layout_marginTop="127dp"
-        android:layout_marginBottom="576dp"
         android:gravity="center"
         android:text="CHANNEL MY DOCTOR"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="127dp" />
 
     <LinearLayout
         android:layout_width="404dp"

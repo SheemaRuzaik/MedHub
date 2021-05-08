@@ -234,7 +234,7 @@
 
 
     <Button
-        android:id="@+id/delete2"
+        android:id="@+id/bookdoc1"
         android:layout_width="85dp"
         android:layout_height="37dp"
         android:layout_marginStart="299dp"
@@ -251,7 +251,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/delete3"
+        android:id="@+id/bookdoc2"
         android:layout_width="85dp"
         android:layout_height="37dp"
         android:layout_marginStart="304dp"

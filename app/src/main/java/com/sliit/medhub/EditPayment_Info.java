@@ -40,7 +40,7 @@ public class EditPayment_Info extends AppCompatActivity {
     private Toolbar toolbar;
 
     // Button
-    Button bttnSave, bttnDelete, bttnCancel;
+    Button bttnSave, bttnCancel;
 
     DatabaseReference dbref, upref;
 
@@ -96,6 +96,15 @@ public class EditPayment_Info extends AppCompatActivity {
                 upref.child("Age").setValue(txtAge.getText().toString().trim());
 
                 Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(EditPayment_Info.this, ViewAppointment.class);
+                startActivity(intent);
+            }
+        });
+
+        bttnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 Intent intent = new Intent(EditPayment_Info.this, ViewAppointment.class);
                 startActivity(intent);

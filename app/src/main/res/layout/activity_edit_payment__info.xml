@@ -19,109 +19,6 @@
 
 
     <EditText
-        android:id="@+id/cardtype2"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="568dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="139dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/cardtype12"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="536dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="171dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/cardtype11"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="503dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="204dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/cardtype10"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="474dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="233dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/cardtype9"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="445dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="262dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/cardtype8"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="184dp"
-        android:layout_marginBottom="299dp"
-        android:background="@drawable/input_bg"
-        android:gravity=""
-        android:paddingLeft="10dp"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <EditText
         android:id="@+id/editAge"
         android:layout_width="215dp"
         android:layout_height="24dp"
@@ -210,108 +107,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.267" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="131dp"
-        android:layout_height="23dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="569dp"
-        android:layout_marginBottom="139dp"
-        android:text="Time:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="133dp"
-        android:layout_height="23dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="537dp"
-        android:layout_marginEnd="239dp"
-        android:layout_marginBottom="171dp"
-        android:text="Date:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="126dp"
-        android:layout_height="23dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="504dp"
-        android:layout_marginEnd="246dp"
-        android:layout_marginBottom="204dp"
-        android:text="Hospital:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="131dp"
-        android:layout_height="26dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="241dp"
-        android:text="Specialist:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="134dp"
-        android:layout_height="29dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="440dp"
-        android:layout_marginEnd="241dp"
-        android:text="Consultant:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="137dp"
-        android:layout_height="27dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="408dp"
-        android:layout_marginBottom="296dp"
-        android:text="Appointment No:"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView8"
@@ -319,7 +114,7 @@
         android:layout_height="23dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="287dp"
         android:layout_marginBottom="421dp"
         android:text="Age:"
@@ -328,7 +123,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView7"
@@ -406,20 +201,18 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="131dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="313dp"
+        android:layout_height="61dp"
         android:layout_marginTop="369dp"
-        android:layout_marginEnd="240dp"
-        android:text="Chanelling Info"
+        android:layout_marginEnd="56dp"
+        android:text="** Channeling information cannot be changed"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.485" />
 
     <TextView
         android:id="@+id/textView3"
@@ -474,20 +267,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="616dp"
-        android:layout_marginBottom="67dp"
-        android:backgroundTint="#E63131"
-        android:text="@string/delete"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:layout_width="404dp"
