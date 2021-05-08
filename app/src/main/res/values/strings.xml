@@ -28,9 +28,9 @@
     <string name="CardType">Card Type-Required</string>
     <string name="Cardnum">Card Number- Required</string>
     <string name="Nameoncard">Name on Card- Required</string>
-    <string name="CVC">CVC*</string>
+    <string name="CVC">XXX</string>
     <string name="age">Age*</string>
-    <string name="Expdate">Exp Date*</string>
+    <string name="Expdate">MM/YYYY</string>
     <string name="PayNow">Pay Now</string>
     <string name="Gender">Gender</string>
     <string name="delete">DELETE</string>

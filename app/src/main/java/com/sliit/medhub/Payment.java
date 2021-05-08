@@ -113,20 +113,20 @@ public class Payment {
 
     //testing methods
 
-    public boolean isNICValid(String NIC) {
-        if((NIC.length()==10 && NIC.charAt(9)=='V') || (NIC.length()==12)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean isPhoneNumberValid(String phoneNumber){
-        if(phoneNumber.length()==10){
-            return true;
-        }else {
-            return false;
-        }
+//    public boolean isNICValid(String NIC) {
+//        if((NIC.length()==10 && NIC.charAt(9)=='V') || (NIC.length()==12)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+//
+//    public boolean isPhoneNumberValid(String phoneNumber){
+//        if(phoneNumber.length()==10){
+//            return true;
+//        }else {
+//            return false;
+//        }
 //
 //     public boolean isCVCValid(String CVC){
 //            if(CVC.length()==3){
@@ -147,6 +147,6 @@ public class Payment {
 //            }
 
         }
-    }
+
 
 

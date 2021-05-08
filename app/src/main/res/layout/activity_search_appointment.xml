@@ -40,17 +40,16 @@
         android:id="@+id/textView16"
         android:layout_width="195dp"
         android:layout_height="36dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="297dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="398dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="164dp"
         android:gravity="center_vertical"
         android:text="Hospital Name:"
         android:textColor="#BA1C1818"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +58,7 @@
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="236dp"
         android:background="@android:drawable/btn_dropdown"
         android:backgroundTint="#ACD6FF"
         android:spinnerMode="dropdown"
@@ -82,15 +81,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Spinner
         android:id="@+id/specialspinner"
         android:layout_width="329dp"
         android:layout_height="42dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="420dp"
+        android:layout_marginEnd="30dp"
         android:background="@android:drawable/btn_dropdown"
         android:backgroundTint="#ACD6FF"
         android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -98,26 +101,25 @@
         android:id="@+id/textView18"
         android:layout_width="195dp"
         android:layout_height="36dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="215dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="164dp"
         android:gravity="center_vertical"
         android:text="Consultant Name:"
         android:textColor="#BA1C1818"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="195dp"
         android:layout_height="36dp"
         android:layout_marginStart="53dp"
+        android:layout_marginTop="384dp"
         android:layout_marginEnd="163dp"
         android:layout_marginBottom="311dp"
         android:gravity="center_vertical"
@@ -125,71 +127,71 @@
         android:textColor="#BA1C1818"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="409dp"
         android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginBottom="614dp"
         android:gravity="center"
         android:text="CHANNEL MY DOCTOR"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="127dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="404dp"
-        android:layout_height="46dp"
+        android:layout_width="420dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/input_bg"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/hos_pro_to_home"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/home_bottom" />
-
-        <ImageView
-            android:id="@+id/hos_pro_to_doctors"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:src="@drawable/group_bottom" />
-
-        <ImageView
-            android:id="@+id/hos_prof"
+            android:id="@+id/channeldoc"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/person_bottom_red" />
+            android:src="@drawable/home_bottom_red" />
 
         <ImageView
-            android:id="@+id/hos_prof_to_appointment"
+            android:id="@+id/channel_doc_to_pat_prof"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/person_bottom" />
+
+        <ImageView
+            android:id="@+id/channel_doc_to_make_app"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/make_appointment" />
+
+        <ImageView
+            android:id="@+id/channel_doc_to_view_app"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
             android:src="@drawable/event_available_bottom" />
 
         <ImageView
-            android:id="@+id/hos_prof_to_extra"
+            android:id="@+id/channel_doc_to_logout"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/add_box_bottom" />
-
-        <ImageView
-            android:id="@+id/hos_prof_to_logout"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:src="@drawable/login_bottom" />
 
     </LinearLayout>

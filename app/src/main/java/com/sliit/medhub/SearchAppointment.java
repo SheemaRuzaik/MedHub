@@ -67,7 +67,7 @@ public class SearchAppointment extends AppCompatActivity {
 
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, consultant);
+                android.R.layout.simple_spinner_item, hospital);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerhospital.setAdapter(adapter1);
         spinnerhospital.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

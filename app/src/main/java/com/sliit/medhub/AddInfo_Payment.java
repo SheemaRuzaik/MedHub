@@ -68,7 +68,7 @@ public class AddInfo_Payment extends AppCompatActivity {
         txtCVC = findViewById(R.id.CVC);
 
         bttnback = findViewById(R.id.Cancel);
-        bttnPay = findViewById(R.id.Delete);
+        bttnPay = findViewById(R.id.Pay);
 
         //Intent intent = getIntent();
         payment = new Payment();
@@ -76,8 +76,8 @@ public class AddInfo_Payment extends AppCompatActivity {
         bttnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //   Intent intent = new Intent(AddInfo_Payment.this, FindDoctor.class);
-                //startActivity(intent);
+                   Intent intent = new Intent(AddInfo_Payment.this, FindDoctor.class);
+                startActivity(intent);
             }
         });
 

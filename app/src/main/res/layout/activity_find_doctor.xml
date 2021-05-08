@@ -101,20 +101,17 @@
         android:id="@+id/book_appointment"
         android:layout_width="275dp"
         android:layout_height="36dp"
-        android:layout_marginTop="127dp"
-        android:layout_marginBottom="576dp"
-        android:gravity="start|right"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="68dp"
+        android:gravity="center"
         android:text="Book Now"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:layout_width="372dp"
@@ -180,63 +177,56 @@
     </TableLayout>
 
     <LinearLayout
-        android:layout_width="404dp"
-        android:layout_height="46dp"
+        android:layout_width="420dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/input_bg"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/hos_pro_to_home"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/home_bottom" />
-
-        <ImageView
-            android:id="@+id/hos_pro_to_doctors"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:src="@drawable/group_bottom" />
-
-        <ImageView
-            android:id="@+id/hos_prof"
+            android:id="@+id/view_app_to_home"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/person_bottom_red" />
+            android:src="@drawable/home_bottom_red" />
 
         <ImageView
-            android:id="@+id/hos_prof_to_appointment"
+            android:id="@+id/view_app_to_pat_prof"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/person_bottom" />
+
+        <ImageView
+            android:id="@+id/view_app_to_make_app"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/make_appointment" />
+
+        <ImageView
+            android:id="@+id/view_app"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
             android:src="@drawable/event_available_bottom" />
 
         <ImageView
-            android:id="@+id/hos_prof_to_extra"
+            android:id="@+id/view_app_logout"
             android:layout_width="35dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/add_box_bottom" />
-
-        <ImageView
-            android:id="@+id/hos_prof_to_logout"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:src="@drawable/login_bottom" />
 
     </LinearLayout>
 
-
     <Button
         android:id="@+id/bookdoc1"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
+        android:layout_width="84dp"
+        android:layout_height="47dp"
         android:layout_marginStart="299dp"
         android:layout_marginTop="303dp"
         android:layout_marginEnd="27dp"
@@ -252,8 +242,8 @@
 
     <Button
         android:id="@+id/bookdoc2"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
+        android:layout_width="81dp"
+        android:layout_height="48dp"
         android:layout_marginStart="304dp"
         android:layout_marginTop="478dp"
         android:layout_marginEnd="22dp"
