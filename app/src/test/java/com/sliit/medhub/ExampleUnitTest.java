@@ -12,13 +12,15 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-
     Payment payment;
+    Patient patient;
+    Hospital hospital;
 
     @Before
-
     public void setUp() {
 
+        patient = new Patient();
+        hospital = new Hospital();
         payment = new Payment();
     }
 
@@ -50,5 +52,20 @@ public class ExampleUnitTest {
         boolean value=payment.isCVCValid("225");
         assertEquals(true,value);
     }
+
+    //IT19991986
+    @Test
+    public void NicIsCorrect(){
+        boolean value = patient.isNICValid("980853926V");
+        assertEquals(true,value);
+    }
+
+    //IT19991986
+    @Test
+    public void RegNoisCorrect(){
+        boolean value = hospital.isRegNoValid("H12345");
+        assertEquals(true,value);
+    }
+
 
 }

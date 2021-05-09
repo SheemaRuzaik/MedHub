@@ -107,8 +107,8 @@ public class FeedBack extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(FeedBack.this, SearchAppointment.class);
+                startActivity(intent);
             }
         });
 
@@ -123,16 +123,16 @@ public class FeedBack extends AppCompatActivity {
         appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(FeedBack.this, FindDoctor.class);
+                startActivity(intent);
             }
         });
 
         my_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(FeedBack.this, ViewAppointment.class);
+                startActivity(intent);
             }
         });
 

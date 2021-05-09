@@ -6,8 +6,7 @@
         <item>Female</item>
     </string-array>
     <string name="feedback">We want to know what you thought of your experience at MedHub.So we do love to hear your feedback . </string>
-    <string name="fname">First Name - Required</string>
-    <string name="lname">Last Name - Required</string>
+    <string name="fullname">Full Name - Required</string>
     <string name="hname">Hospital Name - Required</string>
     <string name="nic">NIC - Required</string>
     <string name="email">Email - Required</string>

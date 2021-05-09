@@ -104,8 +104,8 @@ public class PatientUpdatePassword extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientUpdatePassword.this, SearchAppointment.class);
+                startActivity(intent);
             }
         });
 
@@ -120,16 +120,16 @@ public class PatientUpdatePassword extends AppCompatActivity {
         appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientUpdatePassword.this, FindDoctor.class);
+                startActivity(intent);
             }
         });
 
         my_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientUpdatePassword.this, ViewAppointment.class);
+                startActivity(intent);
             }
         });
 

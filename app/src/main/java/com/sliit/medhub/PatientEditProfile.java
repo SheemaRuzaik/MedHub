@@ -116,8 +116,8 @@ public class PatientEditProfile extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientEditProfile.this, SearchAppointment.class);
+                startActivity(intent);
             }
         });
 
@@ -132,16 +132,16 @@ public class PatientEditProfile extends AppCompatActivity {
         appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientEditProfile.this, FindDoctor.class);
+                startActivity(intent);
             }
         });
 
         my_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(PatientEditProfile.this, MyBooking.class);
-                //startActivity(intent);
+                Intent intent = new Intent(PatientEditProfile.this, ViewAppointment.class);
+                startActivity(intent);
             }
         });
 
