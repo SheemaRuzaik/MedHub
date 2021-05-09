@@ -23,7 +23,8 @@ public class ExampleUnitTest {
     }
 
 
-    //IT19116570
+    //IT19116570-M.R.F.Sheema
+
     @Test
     public void isNumberCorrect() {
 
@@ -32,25 +33,22 @@ public class ExampleUnitTest {
 
     }
 
-    @Test
+    //IT19116570-M.R.F.Sheema
 
-    //IT19116570
+    @Test
     public void isCardNumberCorrect() {
 
         boolean value = payment.isCardNumValid("0125369999569789");
         assertEquals(true, value);
     }
 
+    //IT19116570-M.R.F.Sheema
 
     @Test
-    //IT19116570
-
- public void isCVCCorrect(){
+    public void isCVCCorrect(){
 
         boolean value=payment.isCVCValid("225");
         assertEquals(true,value);
     }
-
-
 
 }

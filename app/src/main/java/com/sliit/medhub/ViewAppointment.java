@@ -1,5 +1,6 @@
 package com.sliit.medhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -52,6 +53,9 @@ public class ViewAppointment extends AppCompatActivity {
         title = findViewById(R.id.head);
         title.setText("My Appointments");
 
+        Intent intent=getIntent();
+        String Pay_ID=intent.getStringExtra("Pay_ID");
+
         // Form details
         txtPaymentNo = findViewById(R.id.getpayNo);
         txtPatientName = findViewById(R.id.getPatientName);
@@ -60,24 +64,39 @@ public class ViewAppointment extends AppCompatActivity {
         txtAge = findViewById(R.id.getAge);
 
 
+
         // button
         bttnback = findViewById(R.id.cancel_button);
         bttndelete = findViewById(R.id.Delete);
         bttnedit = findViewById(R.id.edit);
 
-        final SessionManagement sessionManagement=new SessionManagement(ViewAppointment.this);
-        Integer un=sessionManagement.getSession();
+//        final SessionManagement sessionManagement=new SessionManagement(ViewAppointment.this);
+//        Integer un=sessionManagement.getSession();
 
-        dbref= FirebaseDatabase.getInstance().getReference().child("Payment").child(un.toString());
+        dbref= FirebaseDatabase.getInstance().getReference().child("Payment").child(Pay_ID);
 
         dbref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                txtPaymentNo.setText(snapshot.child("payID").getValue().toString());
-                txtPatientName.setText(snapshot.child("PatientName").getValue().toString());
-                TxtPhoneNumber.setText(snapshot.child("phoneNumber").getValue().toString());
-                txtNIC.setText(snapshot.child("NIC").getValue().toString());
-                txtAge.setText(snapshot.child("Age").getValue().toString());
+                String PayID=snapshot.child("payID").getValue().toString();
+                String Patient_Name=snapshot.child("patientName").getValue().toString();
+                String Phone_Number=snapshot.child("phoneNumber").getValue().toString();
+                String NIC=snapshot.child("nic").getValue().toString();
+                String Age=snapshot.child("age").getValue().toString();
+                String Card_type=snapshot.child("cardType").getValue().toString();
+                String Card_number=snapshot.child("cardNumber").getValue().toString();
+                String Card_Name=snapshot.child("nameOnCard").getValue().toString();
+                String Exp_date=snapshot.child("expDate").getValue().toString();
+                String CVC=snapshot.child("cvc").getValue().toString();
+
+
+                txtPaymentNo.setText(PayID);
+                txtPatientName.setText(Patient_Name);
+                TxtPhoneNumber.setText(Phone_Number);
+                txtNIC.setText(NIC);
+                txtAge.setText(Age);
+
+
             }
 
                 @Override
@@ -91,7 +110,9 @@ public class ViewAppointment extends AppCompatActivity {
                 bttnedit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(ViewAppointment.this, EditPayment_Info.class);
+                        Intent intent = new Intent(v.getContext(), EditPayment_Info.class);
+                        intent.putExtra("getPay_ID",Pay_ID);
+                        v.getContext().startActivity(intent);
                         startActivity(intent);
                     }
                 });
@@ -106,18 +127,35 @@ public class ViewAppointment extends AppCompatActivity {
 
                 bttndelete.setOnClickListener(new View.OnClickListener() {
                     @Override
+
                     public void onClick(View v) {
-                        delref=FirebaseDatabase.getInstance().getReference().child("Payment").child(txtPaymentNo.getText().toString());
-                        delref.removeValue();
-                        sessionManagement.removeSession();
+                        delref= FirebaseDatabase.getInstance().getReference().child("Payment");
+                        delref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.hasChild(Pay_ID)){
+                                    delref=FirebaseDatabase.getInstance().getReference().child("Payment").child(Pay_ID);
+                                    delref.removeValue();
+                                    Intent intent2 = new Intent(ViewAppointment.this,AddInfo_Payment.class);
 
-                        Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
+                                    startActivity(intent2);
+                                    Toast.makeText(getBaseContext(), "Your Appointment has been Deleted", Toast.LENGTH_LONG).show();
+                                }
+                                else{
+                                    Toast.makeText(getBaseContext(), "No Source to delete", Toast.LENGTH_LONG).show();
+                                }
+                            }
 
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(intent);
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
 
                     }
                 });
+
+
 
 
 
@@ -127,9 +165,9 @@ public class ViewAppointment extends AppCompatActivity {
         toolbar = findViewById(R.id.app_bar);
 
         setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.menu);
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setHomeAsUpIndicator(R.drawable.menu);
 
         // navigation button
         home = findViewById(R.id.view_app_to_home);

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_wp"
+    android:orientation="vertical"
+    android:background="@drawable/welcome"
+    tools:context=".WelcomePage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/app_bar"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="120dp">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo2"
+            android:layout_gravity="center"/>
+        <!--
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WelCome To MedHub"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="italic|bold"/>
+         -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="THE FASTEST WAY TO CHANNEL YOUR DOCTOR..."
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/pat_login"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="80dp"
+            android:text="Patient Login"
+            android:gravity="center"
+            android:drawableLeft="@drawable/person_welcome"
+            android:drawablePadding="10dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold|italic"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:background="@drawable/patient_btn"/>
+
+        <TextView
+            android:id="@+id/hos_login"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="180dp"
+            android:text="Hospital Login"
+            android:drawableLeft="@drawable/home_welcome"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textStyle="italic|bold"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:background="@drawable/hospital_btn"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="680dp"
+        android:orientation="horizontal">
+
+        <include layout="@layout/bottom_bar"/>
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

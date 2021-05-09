@@ -18,18 +18,28 @@ public class SessionManagement {
 
     }
 
-    public void saveSession(Payment payment){
+    public void saveSession(Patient patient){
 
-        Integer un=payment.getPayID();
-        editor.putInt(SESSION_KEY,un).commit();
+        String un=patient.getNic();
+        editor.putString(SESSION_KEY,un).commit();
 
     }
 
-    public Integer getSession(){
+    public void saveHospitalSession(Hospital hospital){
 
-        return sharedPreferences.getInt(SESSION_KEY,0);
+        String un=hospital.getRegister_no();
+        editor.putString(SESSION_KEY,un).commit();
     }
 
+    public String getSession(){
+
+        return sharedPreferences.getString(SESSION_KEY,"No user");
+    }
+
+    public String getHospitalSession(){
+
+        return sharedPreferences.getString(SESSION_KEY,"No user");
+    }
 
     public void removeSession(){
 
@@ -37,6 +47,4 @@ public class SessionManagement {
 
 
     }
-
-
 }

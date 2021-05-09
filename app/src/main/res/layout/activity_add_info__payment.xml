@@ -25,21 +25,19 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="120dp"
-        android:layout_marginEnd="27dp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/person"
         android:hint="@string/patientname"
         android:paddingLeft="10dp"
         android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <EditText
         android:id="@+id/phoneNumber"
@@ -92,10 +90,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintVertical_bias="0.415" />
 
     <TextView
         android:id="@+id/txtExpDate"
@@ -140,24 +138,21 @@
 
     <EditText
         android:id="@+id/patientAge"
-        android:layout_width="69dp"
-        android:layout_height="39dp"
+        android:layout_width="67dp"
+        android:layout_height="36dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="236dp"
-        android:layout_marginBottom="412dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="9dp"
         android:background="@drawable/input_bg"
         android:gravity="center|left"
         android:hint="@string/age"
         android:paddingLeft="10dp"
         android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardtype"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/NIC"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
@@ -257,7 +252,6 @@
         android:layout_height="57dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="603dp"
-        android:layout_marginEnd="254dp"
         android:layout_marginBottom="71dp"
         android:backgroundTint="#FFFFFF"
         android:gravity="center"
@@ -266,12 +260,11 @@
         android:textColor="#E63131"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/include"
+        app:layout_constraintEnd_toStartOf="@+id/Pay_Now"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Pay_Now"
@@ -293,9 +286,9 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
-        android:layout_width="394dp"
-        android:layout_height="47dp"
-        android:layout_marginEnd="12dp"
+        android:layout_width="408dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/input_bg"
         android:gravity="center"
