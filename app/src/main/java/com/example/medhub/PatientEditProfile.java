@@ -48,7 +48,7 @@ public class PatientEditProfile extends AppCompatActivity {
         title.setText("Edit Profile");
 
         // Form details
-        full_name = findViewById(R.id.full_name);
+        full_name = findViewById(R.id.edit_full_name);
         nic = findViewById(R.id.edit_nic);
         email = findViewById(R.id.edit_patient_email);
         contact = findViewById(R.id.edit_patient_contact_no);
