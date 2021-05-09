@@ -1,5 +1,6 @@
 package com.sliit.medhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -31,6 +32,14 @@ public class EditPayment_Info extends AppCompatActivity {
     EditText txtPatientName, txtPhoneNumber, txtNIC, txtAge;
     TextView txtpayID;
 
+
+    //declare not needed variables
+    String Card_type;
+    String Card_number;
+    String Card_Name;
+    String Exp_date;
+    String CVC;
+
     // navigation button
     ImageView home, doctor, profile, appointment, extra, logout;
 
@@ -50,9 +59,14 @@ public class EditPayment_Info extends AppCompatActivity {
         setContentView(R.layout.activity_edit_payment__info);
 
 
+
+
         // Tool bar
         title = findViewById(R.id.head);
         title.setText("Edit My Appointment");
+
+        Intent intent=getIntent();
+        String Pay_ID=intent.getStringExtra("getPay_ID");
 
         txtPatientName = findViewById(R.id.editPatientName);
         txtPhoneNumber = findViewById(R.id.editPhoneNumber);
@@ -60,21 +74,39 @@ public class EditPayment_Info extends AppCompatActivity {
         txtAge = findViewById(R.id.editAge);
         txtpayID=findViewById(R.id.viewpayID);
 
+        //Payment Object
+
+        Payment getpayment=new Payment();
+
         //Button
         bttnSave = findViewById(R.id.Save);
+        bttnCancel=findViewById(R.id.Cancel);
 
-        final SessionManagement sessionManagement = new SessionManagement(EditPayment_Info.this);
-        Integer un = sessionManagement.getSession();
+//     final SessionManagement sessionManagement = new SessionManagement(EditPayment_Info.this);
+//        Integer un = sessionManagement.getSession();
 
-        dbref = FirebaseDatabase.getInstance().getReference().child("Payment").child(un.toString());
+        dbref = FirebaseDatabase.getInstance().getReference().child("Payment").child(Pay_ID);
 
         dbref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                txtPatientName.setText(snapshot.child("PatientName").getValue().toString());
-                txtPhoneNumber.setText(snapshot.child("phoneNumber").getValue().toString());
-                txtNIC.setText(snapshot.child("NIC").getValue().toString());
-                txtAge.setText(snapshot.child("Age").getValue().toString());
+                String PayID=snapshot.child("payID").getValue().toString();
+                String Patient_Name=snapshot.child("patientName").getValue().toString();
+                String Phone_Number=snapshot.child("phoneNumber").getValue().toString();
+                String NIC=snapshot.child("nic").getValue().toString();
+                String Age=snapshot.child("age").getValue().toString();
+                Card_type=snapshot.child("cardType").getValue().toString();
+                 Card_number=snapshot.child("cardNumber").getValue().toString();
+                 Card_Name=snapshot.child("nameOnCard").getValue().toString();
+                 Exp_date=snapshot.child("expDate").getValue().toString();
+                 CVC=snapshot.child("cvc").getValue().toString();
+
+
+                txtpayID.setText(PayID);
+                txtPatientName.setText(Patient_Name);
+                txtPhoneNumber.setText(Phone_Number);
+                txtNIC.setText(NIC);
+                txtAge.setText(Age);
             }
 
 
@@ -86,19 +118,47 @@ public class EditPayment_Info extends AppCompatActivity {
 
 
         bttnSave.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                dbref=FirebaseDatabase.getInstance().getReference().child("Payment");
+                dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                upref= FirebaseDatabase.getInstance().getReference().child("Payment").child(txtpayID.getText().toString());
-                upref.child("PatientName").setValue(txtPatientName.getText().toString().trim());
-                upref.child("phoneNumber").setValue(txtPhoneNumber.getText().toString().trim());
-                upref.child("NIC").setValue(txtNIC.getText().toString().trim());
-                upref.child("Age").setValue(txtAge.getText().toString().trim());
+                        if (snapshot.hasChild(Pay_ID)) {
+                            try {
+                                getpayment.setPayID(Integer.parseInt(txtpayID.getText().toString().trim()));
+                                getpayment.setPatientName(txtPatientName.getText().toString().trim());
+                                getpayment.setPhoneNumber(txtPhoneNumber.getText().toString().trim());
+                                getpayment.setNIC(txtNIC.getText().toString().trim());
+                                getpayment.setAge(txtAge.getText().toString().trim());
 
-                Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
+                                getpayment.setCardType(Card_type);
+                                getpayment.setCardNumber(Card_number);
+                                getpayment.setNameOnCard(Card_Name);
+                                getpayment.setExpDate(Exp_date);
+                                getpayment.setCVC(CVC);
 
-                Intent intent = new Intent(EditPayment_Info.this, ViewAppointment.class);
-                startActivity(intent);
+                                dbref.child(Pay_ID).setValue(getpayment);
+
+                                Toast.makeText(getBaseContext(), "Your Appointment has been Updated", Toast.LENGTH_LONG).show();
+
+
+
+                            } catch (NumberFormatException e) {
+                                Toast.makeText(getBaseContext(), "Enter Valid Format", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        else{
+                            Toast.makeText(getBaseContext(), "No Source to update", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 

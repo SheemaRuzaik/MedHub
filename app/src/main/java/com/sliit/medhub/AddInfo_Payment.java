@@ -123,12 +123,18 @@ public class AddInfo_Payment extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             if(snapshot.hasChild(payment.getPayID().toString())){
-                                Toast.makeText(getApplicationContext(),"Unsuccessful",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Unsuccessful",Toast.LENGTH_LONG).show();
                             }else {
-                                dbref.child(payment.getPayID().toString()).setValue(payment);
-                                Toast.makeText(getApplicationContext(), "Successfully made your appointment", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), AddInfo_Payment.class);
-                                startActivity(intent);
+
+                                String ID=payment.getPayID().toString();
+
+                                dbref.child(ID).setValue(payment);
+                                Toast.makeText(getApplicationContext(), "Successfully made your appointment", Toast.LENGTH_LONG).show();
+                                clearControls();
+                               Intent intent = new Intent(v.getContext(), ViewAppointment.class);
+                               intent.putExtra("Pay_ID",ID);
+                               v.getContext().startActivity(intent);
+
                             }
                         }
 
@@ -167,16 +173,14 @@ public class AddInfo_Payment extends AppCompatActivity {
         // navigation implement
        // constraintLayout = findViewById(R.id.drawer_hr);
         //navigationView = findViewById(R.id.Navigation_view_hr);
-        toolbar = findViewById(R.id.app_bar);
+       // toolbar = findViewById(R.id.app_bar);
 
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.menu);
+        //setSupportActionBar(toolbar);
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+        //actionBar.setHomeAsUpIndicator(R.drawable.menu);
 
     }
-
-
 
 
     private void clearControls() {

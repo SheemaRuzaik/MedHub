@@ -2,7 +2,7 @@ package com.sliit.medhub;
 
 public class Payment {
 
-    private Integer payID = 100;
+    private Integer payID = 0;
     private String PatientName;
     private String phoneNumber;
     private String NIC;
@@ -120,7 +120,6 @@ public class Payment {
         }
 
     }
-
 
     public boolean isCardNumValid(String CardNumber) {
         if (CardNumber.length() == 16) {
