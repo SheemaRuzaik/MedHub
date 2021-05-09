@@ -28,7 +28,7 @@ public class PatientProfile extends AppCompatActivity {
     // Form details
     TextView full_name, nic, email, contact, dob, gender;
     // Button
-    TextView edit, change, delete;
+    TextView edit, change, delete, feedback;
     // navigation button
     ImageView home, profile, appointment, my_book, logout;
     // navigation details
@@ -59,6 +59,7 @@ public class PatientProfile extends AppCompatActivity {
         edit = findViewById(R.id.edit_profile_patient);
         change = findViewById(R.id.change_patient);
         delete = findViewById(R.id.delete_patient);
+        feedback = findViewById(R.id.feedback);
 
         final SessionManagement sessionManagement=new SessionManagement(PatientProfile.this);
         String un=sessionManagement.getSession();
@@ -106,9 +107,17 @@ public class PatientProfile extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(),WelcomePage.class);
                 startActivity(intent);
 
+            }
+        });
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PatientProfile.this, FeedBack.class);
+                startActivity(intent);
             }
         });
 

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Medhub">
+        <activity android:name=".FeedBack"></activity>
         <activity android:name=".WelcomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,8 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HospitalLogin"></activity>
-        <activity android:name=".PatientLogin"></activity>
+        <activity android:name=".HospitalLogin" />
+        <activity android:name=".PatientLogin" />
         <activity android:name=".PatientUpdatePassword" />
         <activity android:name=".HospitalUpdatePassword" />
         <activity android:name=".PatientEditProfile" />
@@ -25,7 +26,7 @@
         <activity android:name=".HospitalProfile" />
         <activity android:name=".PatientProfile" />
         <activity android:name=".HospitalRegister" />
-        <activity android:name=".PatientRegister"></activity>
+        <activity android:name=".PatientRegister" />
         <activity android:name=".MainActivity" />
     </application>
 

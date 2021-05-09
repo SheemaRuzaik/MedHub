@@ -105,7 +105,7 @@ public class HospitalProfile extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(),WelcomePage.class);
                 startActivity(intent);
             }
         });
