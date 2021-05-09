@@ -11,22 +11,20 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-
+    Consultant consultant;
     Payment payment;
     Patient patient;
     Hospital hospital;
 
     @Before
     public void setUp() {
-
+        consultant = new Consultant();
         patient = new Patient();
         hospital = new Hospital();
         payment = new Payment();
     }
 
-
-    //IT19116570-M.R.F.Sheema
-
+    //IT19116570
     @Test
     public void isNumberCorrect() {
 
@@ -35,8 +33,7 @@ public class ExampleUnitTest {
 
     }
 
-    //IT19116570-M.R.F.Sheema
-
+    //IT19116570
     @Test
     public void isCardNumberCorrect() {
 
@@ -44,8 +41,7 @@ public class ExampleUnitTest {
         assertEquals(true, value);
     }
 
-    //IT19116570-M.R.F.Sheema
-
+    //IT19116570
     @Test
     public void isCVCCorrect(){
 
@@ -67,5 +63,11 @@ public class ExampleUnitTest {
         assertEquals(true,value);
     }
 
+    //IT19963334
+    @Test
+    public void DocRegNoCorrect(){
+        boolean value = consultant.isRegisterNoValid("D25649");
+        assertEquals(true,value);
+    }
 
 }

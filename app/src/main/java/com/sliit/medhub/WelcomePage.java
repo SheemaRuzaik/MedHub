@@ -34,7 +34,7 @@ public class WelcomePage extends AppCompatActivity {
         patient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(com.example.medhub.WelcomePage.this, com.example.medhub.PatientLogin.class);
+                Intent intent = new Intent(WelcomePage.this, PatientLogin.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +42,7 @@ public class WelcomePage extends AppCompatActivity {
         hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(com.example.medhub.WelcomePage.this, com.example.medhub.HospitalLogin.class);
+                Intent intent = new Intent(WelcomePage.this, HospitalLogin.class);
                 startActivity(intent);
             }
         });
