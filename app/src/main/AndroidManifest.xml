@@ -9,27 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MedHub">
-        <activity android:name=".FindDoctor" />
-
-        <activity android:name=".SearchAppointment">
+        <activity android:name=".WelcomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
+        <activity android:name=".FindDoctor" />
+        <activity android:name=".SearchAppointment"></activity>
         <activity android:name=".ViewAppointment" />
-
         <activity android:name=".EditPayment_Info" />
-
         <activity android:name=".AddInfo_Payment"/>
-
-        <activity android:name=".MainActivity">
-
-
-        </activity>
+        <activity android:name=".HospitalLogin" />
+        <activity android:name=".PatientLogin" />
+        <activity android:name=".PatientUpdatePassword" />
+        <activity android:name=".HospitalUpdatePassword" />
+        <activity android:name=".PatientEditProfile" />
+        <activity android:name=".HospitalEditProfile" />
+        <activity android:name=".HospitalProfile" />
+        <activity android:name=".PatientProfile" />
+        <activity android:name=".HospitalRegister" />
+        <activity android:name=".PatientRegister" />
+        <activity android:name=".MainActivity"></activity>
 
 
 
