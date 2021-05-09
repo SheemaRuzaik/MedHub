@@ -12,12 +12,23 @@
         <activity android:name=".FindDoctor" />
 
 
-        <activity android:name=".SearchAppointment" />
+        <activity android:name=".SearchAppointment"/>
+
+
+
+
+
+
 
         <activity android:name=".ViewAppointment" />
 
 
-        <activity android:name=".EditPayment_Info" >
+        <activity android:name=".EditPayment_Info" />
+
+
+
+
+        <activity android:name=".AddInfo_Payment">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +37,7 @@
 
         </activity>
 
-        <activity android:name=".AddInfo_Payment" />
+
 
         <activity android:name=".MainActivity">
 

@@ -9,12 +9,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchAppointment extends AppCompatActivity {
 
+
+    // Title bar
+    TextView title;
 
     Spinner spinnerconsultant,spinnerhospital,spinnerspecilization;
 
@@ -31,6 +35,11 @@ public class SearchAppointment extends AppCompatActivity {
         spinnerspecilization=findViewById(R.id.specialspinner);
 
 
+        //Tool bar
+        title = findViewById(R.id.head);
+        title.setText("Find Your Doctor");
+
+
         List<String> consultant = new ArrayList();
         consultant.add(0,"CHOOSE CONSULTANT");
         consultant.add("DR.(MRS.) THALAKOLA");
@@ -45,7 +54,7 @@ public class SearchAppointment extends AppCompatActivity {
         spinnerconsultant.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent.getItemAtPosition(position).equals("CHOOSE CONSULTANT")){
+                if (parent.getItemAtPosition(position).equals("CHOOSE Consultant")){
                     // nothing
                 }else{
                     String item = parent.getItemAtPosition(position).toString();

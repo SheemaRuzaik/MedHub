@@ -11,10 +11,12 @@
 
 
     <include
+        android:id="@+id/include"
         layout="@layout/app_bar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="327dp" />
+        tools:layout_editor_absoluteY="232dp" />
 
 
     <EditText
@@ -23,10 +25,9 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="121dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="568dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="27dp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/person"
@@ -40,26 +41,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <EditText
         android:id="@+id/phoneNumber"
         android:layout_width="356dp"
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="13dp"
+        android:autofillHints=""
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/phone"
-        android:gravity="center|left"
+        android:drawableLeft="@drawable/phone_android"
         android:hint="@string/phonenumber"
         android:paddingLeft="10dp"
         android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256" />
 
     <EditText
         android:id="@+id/NIC"
@@ -67,22 +66,18 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="232dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="457dp"
+        android:autofillHints=""
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/security"
-        android:gravity="center|left"
-        android:hint="@string/NIC"
+        android:hint="@string/nic"
         android:paddingLeft="10dp"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.338" />
 
     <TextView
         android:id="@+id/textView5"
@@ -90,10 +85,6 @@
         android:layout_height="33dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="321dp"
-        android:layout_marginBottom="406dp"
         android:gravity="center"
         android:text="Age"
         android:textColor="@color/black"
@@ -101,16 +92,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintVertical_bias="0.409" />
 
     <TextView
         android:id="@+id/txtExpDate"
-        android:layout_width="121dp"
-        android:layout_height="39dp"
+        android:layout_width="105dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="36dp"
@@ -124,8 +114,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846" />
 
     <TextView
         android:id="@+id/txtCVC"
@@ -133,10 +125,6 @@
         android:layout_height="32dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="249dp"
-        android:layout_marginTop="502dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="196dp"
         android:gravity="center"
         android:text="CVC"
         android:textColor="@color/black"
@@ -144,10 +132,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.725" />
+
 
     <EditText
         android:id="@+id/patientAge"
@@ -155,10 +144,10 @@
         android:layout_height="39dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="236dp"
-        android:layout_marginBottom="409dp"
+        android:layout_marginBottom="412dp"
         android:background="@drawable/input_bg"
         android:gravity="center|left"
         android:hint="@string/age"
@@ -166,11 +155,10 @@
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/cardtype"
@@ -178,8 +166,6 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="344dp"
-        android:layout_marginBottom="345dp"
         android:background="@drawable/input_bg"
         android:gravity="center|left"
         android:hint="@string/CardType"
@@ -190,7 +176,8 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.481" />
+
 
     <EditText
         android:id="@+id/cardnumber"
@@ -198,21 +185,17 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="394dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="295dp"
         android:background="@drawable/input_bg"
-        android:gravity=""
+        android:gravity="center|left"
         android:hint="@string/Cardnum"
         android:paddingLeft="10dp"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.567" />
 
     <EditText
         android:id="@+id/nameoncard"
@@ -220,8 +203,6 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="445dp"
-        android:layout_marginBottom="244dp"
         android:background="@drawable/input_bg"
         android:gravity="center|left"
         android:hint="@string/Nameoncard"
@@ -232,8 +213,7 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintVertical_bias="0.645" />
 
     <EditText
         android:id="@+id/expdate"
@@ -241,76 +221,81 @@
         android:layout_height="42dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="535dp"
-        android:layout_marginEnd="254dp"
-        android:layout_marginBottom="154dp"
         android:background="@drawable/input_bg"
-        android:gravity="center|left"
+        android:gravity="center"
         android:hint="@string/Expdate"
         android:paddingLeft="10dp"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.779" />
 
     <EditText
         android:id="@+id/CVC"
-        android:layout_width="89dp"
-        android:layout_height="40dp"
+        android:layout_width="62dp"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="535dp"
-        android:layout_marginBottom="156dp"
         android:background="@drawable/input_bg"
-        android:gravity="center|left"
+        android:gravity="center"
         android:hint="@string/CVC"
         android:paddingLeft="10dp"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
 
     <Button
-        android:id="@+id/Cancel"
+        android:id="@+id/Cancel_pay"
         android:layout_width="113dp"
         android:layout_height="57dp"
-        android:layout_marginStart="62dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="603dp"
-        android:layout_marginEnd="236dp"
+        android:layout_marginEnd="254dp"
         android:layout_marginBottom="71dp"
         android:backgroundTint="#FFFFFF"
+        android:gravity="center"
         android:outlineProvider="none"
         android:text="Cancel"
         android:textColor="#E63131"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/Pay"
+        android:id="@+id/Pay_Now"
         android:layout_width="113dp"
         android:layout_height="57dp"
-        android:layout_marginStart="226dp"
+        android:layout_marginStart="232dp"
         android:layout_marginTop="603dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="66dp"
         android:layout_marginBottom="71dp"
         android:backgroundTint="#E63131"
-        android:gravity="center|left"
+        android:gravity="center"
         android:text="Pay Now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Cancel_pay"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
-        android:layout_width="420dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="394dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/input_bg"
         android:gravity="center"
@@ -336,7 +321,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
-            android:src="@drawable/make_appointment" />
+            android:src="@drawable/make_appointment_red" />
 
         <ImageView
             android:id="@+id/view_app"

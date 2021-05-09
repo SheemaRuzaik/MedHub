@@ -1,5 +1,6 @@
 package com.sliit.medhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -67,8 +68,8 @@ public class AddInfo_Payment extends AppCompatActivity {
         txtExpDate = findViewById(R.id.expdate);
         txtCVC = findViewById(R.id.CVC);
 
-        bttnback = findViewById(R.id.Cancel);
-        bttnPay = findViewById(R.id.Pay);
+        bttnback = findViewById(R.id.Cancel_pay);
+        bttnPay = findViewById(R.id.Pay_Now);
 
         //Intent intent = getIntent();
         payment = new Payment();
@@ -83,6 +84,7 @@ public class AddInfo_Payment extends AppCompatActivity {
 
 
         bttnPay.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(txtPatientName.getText().toString())) {
@@ -107,28 +109,45 @@ public class AddInfo_Payment extends AppCompatActivity {
                     dbref = FirebaseDatabase.getInstance().getReference().child("Payment");
 
                     payment.setPatientName(txtPatientName.getText().toString().trim());
-                    payment.setPhoneNumber(Integer.parseInt(txtPhoneNumber.getText().toString().trim()));
+                    payment.setPhoneNumber(txtPhoneNumber.getText().toString().trim());
                     payment.setNIC(txtNIC.getText().toString().trim());
-                    payment.setAge(Integer.parseInt(txtAge.getText().toString().trim()));
+                    payment.setAge(txtAge.getText().toString().trim());
                     payment.setCardType(txtCardType.getText().toString().trim());
-                    payment.setCardNumber(Integer.parseInt(txtCardNumber.getText().toString().trim()));
+                    payment.setCardNumber(txtCardNumber.getText().toString().trim());
                     payment.setNameOnCard(txtNameOnCard.getText().toString().trim());
                     payment.setExpDate(txtExpDate.getText().toString().trim());
-                    payment.setCVC(Integer.parseInt(txtCVC.getText().toString().trim()));
+                    payment.setCVC(txtCVC.getText().toString().trim());
 
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onDataChange(DataSnapshot snapshot) {
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
-
+                            if(snapshot.hasChild(payment.getPayID().toString())){
+                                Toast.makeText(getApplicationContext(),"Unsuccessful",Toast.LENGTH_SHORT).show();
+                            }else {
                                 dbref.child(payment.getPayID().toString()).setValue(payment);
+                                Toast.makeText(getApplicationContext(), "Successfully made your appointment", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), AddInfo_Payment.class);
+                                startActivity(intent);
+                            }
+                        }
 
-                            SessionManagement sessionManagement=new SessionManagement(AddInfo_Payment.this);
-                            sessionManagement.saveSession(payment);
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                                Toast.makeText(getApplicationContext(), "Successfully placed your appointment", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), ViewAppointment.class);
+                        }
+                    });
+                }
+            }
+        });
+
+
+
+                         //   SessionManagement sessionManagement=new SessionManagement(AddInfo_Payment.this);
+                         //   sessionManagement.saveSession(payment);
+
+                                //Toast.makeText(getApplicationContext(), "Successfully placed your appointment", Toast.LENGTH_SHORT).show();
+                                //Intent intent = new Intent(getApplicationContext(), ViewAppointment.class);
                                // intent.putExtra("paymentID",payID);
                                // intent.putExtra("patientname",txtPatientName.getText().toString());
                                 //intent.putExtra("phonenumber",Integer.parseInt(txtPhoneNumber.getText().toString()));
@@ -136,22 +155,11 @@ public class AddInfo_Payment extends AppCompatActivity {
                                // intent.putExtra("Age",Integer.parseInt(txtAge.getText().toString()));
 
 
-                                startActivity(intent);
-                            }
+                               // startActivity(intent);
 
 
-                        @Override
-                        public void onCancelled(DatabaseError error) {
-
-                        }
-
-                    });
 
 
-                }
-            }
-
-        });
 
 
 

@@ -2,25 +2,25 @@ package com.sliit.medhub;
 
 public class Payment {
 
-    private Integer payID=100;
+    private Integer payID = 100;
     private String PatientName;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private String NIC;
-    private Integer Age;
+    private String Age;
     //private String Gender;
     private String CardType;
-    private Integer CardNumber;
+    private String CardNumber;
     private String NameOnCard;
     private String ExpDate;
-    private Integer CVC;
+    private String CVC;
 
     public Payment() {
     }
 
 
-    public Integer  getPayID() {
+    public Integer getPayID() {
 
-        payID=payID+1;
+        payID = payID + 1;
 
         return payID;
     }
@@ -37,11 +37,11 @@ public class Payment {
         PatientName = patientName;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -53,21 +53,13 @@ public class Payment {
         this.NIC = NIC;
     }
 
-    public Integer getAge() {
+    public String getAge() {
         return Age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         Age = age;
     }
-
-   // public String getGender() {
-  //      return Gender;
-  //  }
-
-  //  public void setGender(String gender) {
-  //      Gender = gender;
-   // }
 
     public String getCardType() {
         return CardType;
@@ -77,11 +69,11 @@ public class Payment {
         CardType = cardType;
     }
 
-    public Integer getCardNumber() {
+    public String getCardNumber() {
         return CardNumber;
     }
 
-    public void setCardNumber(Integer cardNumber) {
+    public void setCardNumber(String cardNumber) {
         CardNumber = cardNumber;
     }
 
@@ -101,52 +93,44 @@ public class Payment {
         ExpDate = expDate;
     }
 
-    public Integer getCVC() {
+    public String getCVC() {
         return CVC;
     }
 
-    public void setCVC(Integer CVC) {
+    public void setCVC(String CVC) {
         this.CVC = CVC;
     }
 
 
+ //  testing methods
 
-    //testing methods
+    public boolean isPhoneNumberValid(String phoneNumber) {
+        if (phoneNumber.length() == 10) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-//    public boolean isNICValid(String NIC) {
-//        if((NIC.length()==10 && NIC.charAt(9)=='V') || (NIC.length()==12)) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-//
-//    public boolean isPhoneNumberValid(String phoneNumber){
-//        if(phoneNumber.length()==10){
-//            return true;
-//        }else {
-//            return false;
-//        }
-//
-//     public boolean isCVCValid(String CVC){
-//            if(CVC.length()==3){
-//                return true;
-//            }else{
-//                return false;
-//            }
-//
-//        }
-//
-//
-//    public boolean isCardNumValid(String cardNum){
-//            if (cardNum.length()==16){
-//                return true;
-//            }else{
-//
-//                return false;
-//            }
-
+    public boolean isCVCValid(String CVC) {
+        if (CVC.length() == 3) {
+            return true;
+        } else {
+            return false;
         }
 
+    }
 
 
+    public boolean isCardNumValid(String CardNumber) {
+        if (CardNumber.length() == 16) {
+            return true;
+        } else {
+
+            return false;
+        }
+
+    }
+
+
+}

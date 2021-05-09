@@ -1,5 +1,6 @@
 package com.sliit.medhub;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,8 +11,46 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+
+
+    Payment payment;
+
+    @Before
+
+    public void setUp() {
+
+        payment = new Payment();
     }
+
+
+    //IT19116570
+    @Test
+    public void isNumberCorrect() {
+
+        boolean value = payment.isPhoneNumberValid("0770156468");
+        assertEquals(true, value);
+
+    }
+
+    @Test
+
+    //IT19116570
+    public void isCardNumberCorrect() {
+
+        boolean value = payment.isCardNumValid("0125369999569789");
+        assertEquals(true, value);
+    }
+
+
+    @Test
+    //IT19116570
+
+ public void isCVCCorrect(){
+
+        boolean value=payment.isCVCValid("225");
+        assertEquals(true,value);
+    }
+
+
+
 }
